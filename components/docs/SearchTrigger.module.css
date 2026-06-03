@@ -9,3 +9,10 @@
     border-color: var(--mantine-primary-color-filled);
   }
 }
+
+/* Sidebar variant: full-width search box */
+.fullWidth {
+  width: 100%;
+  padding-block: rem(7px);
+  background-color: var(--mantine-color-default-hover);
+}

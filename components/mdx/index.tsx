@@ -1,6 +1,17 @@
 import Link from 'fumadocs-core/link';
 import type { MDXComponents } from 'mdx/types';
-import { Anchor, Divider, Table, TableScrollContainer, Title } from '@mantine/core';
+import {
+  Anchor,
+  Divider,
+  Table,
+  TableScrollContainer,
+  TableTbody,
+  TableTd,
+  TableTh,
+  TableThead,
+  TableTr,
+  Title,
+} from '@mantine/core';
 import { GitHubAlertBlockquote } from './Blockquote';
 
 import { CodeBlock } from './CodeBlock';
@@ -48,6 +59,11 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
         <Table striped highlightOnHover withTableBorder {...props} />
       </TableScrollContainer>
     ),
+    thead: (props) => <TableThead {...props} />,
+    tbody: (props) => <TableTbody {...props} />,
+    tr: (props) => <TableTr {...props} />,
+    th: (props) => <TableTh {...props} />,
+    td: (props) => <TableTd {...props} />,
     ...components,
   };
 }

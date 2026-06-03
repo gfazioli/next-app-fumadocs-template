@@ -7,15 +7,38 @@
   padding-inline: var(--mantine-spacing-md);
 
   @media (min-width: $mantine-breakpoint-md) {
-    grid-template-columns: rem(260px) minmax(0, 1fr);
+    grid-template-columns: rem(270px) minmax(0, 1fr);
+  }
+
+  &[data-collapsed] {
+    @media (min-width: $mantine-breakpoint-md) {
+      grid-template-columns: minmax(0, 1fr);
+    }
   }
 }
 
 .sidebar {
+  display: flex;
+  flex-direction: column;
   position: sticky;
   top: rem(60px);
   height: calc(100dvh - rem(60px));
   border-right: 1px solid var(--mantine-color-default-border);
+
+  [data-collapsed] & {
+    display: none;
+  }
+}
+
+.sidebarHeader {
+  padding-block: var(--mantine-spacing-sm);
+  padding-right: var(--mantine-spacing-sm);
+}
+
+.sidebarFooter {
+  padding-block: var(--mantine-spacing-xs);
+  padding-right: var(--mantine-spacing-sm);
+  border-top: 1px solid var(--mantine-color-default-border);
 }
 
 .main {
@@ -29,4 +52,12 @@
   z-index: 50;
   background-color: var(--mantine-color-body);
   border-bottom: 1px solid var(--mantine-color-default-border);
+}
+
+/* Floating expand button shown when the sidebar is collapsed */
+.expand {
+  position: fixed;
+  left: rem(12px);
+  top: rem(76px);
+  z-index: 60;
 }
