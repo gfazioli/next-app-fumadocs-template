@@ -10,6 +10,8 @@ This is a template for a [Next.js](https://nextjs.org/) App Router + [Mantine](h
 
 The docs UI is built **100% with Mantine** on top of the headless `fumadocs-core` — no Tailwind, no third-party docs theme, a single styling system for the whole app. Change `primaryColor` in `theme.ts` and the entire docs UI follows.
 
+> Looking for the [Nextra](https://nextra.site/) flavor? Check out the sibling template [next-app-nextra-template](https://github.com/gfazioli/next-app-nextra-template).
+
 ## Quick start
 
 ```bash
@@ -20,6 +22,8 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) — the landing page lives at `/`, the documentation at `/docs`. Add pages in `content/docs` and order them in `content/docs/meta.json`.
+
+**Requirements**: Node.js ≥ 24, Yarn 4 (bundled — do not use npm or pnpm).
 
 ## Features
 
@@ -59,6 +63,10 @@ This template comes with the following features:
 - `source.config.ts` – fumadocs-mdx collections and schemas
 
 The shipped documentation doubles as a feature tour: Getting Started, MDX Components showcase, Customize UI and Search guides.
+
+## Why headless (no Tailwind)?
+
+`fumadocs-ui` — the official theme — is built on Tailwind CSS v4. Pairing it with Mantine means maintaining two styling systems and reconciling their cascade layers. This template instead consumes only the headless `fumadocs-core` (page tree, TOC scroll-spy, breadcrumbs, search — zero styling opinions) and paints everything with Mantine. One design system, one theme, no conflicts — and the docs UI lives in your repo as plain React + Mantine code you can freely edit.
 
 ## npm scripts
 
