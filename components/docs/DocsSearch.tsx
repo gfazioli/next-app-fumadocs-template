@@ -83,31 +83,6 @@ export function DocsSearch() {
         rightSectionPointerEvents="none"
         rightSectionWidth={60}
       />
-      <Group gap="xs" px="md" py={8}>
-        <Text size="xs" c="dimmed" fw={500}>
-          Filter
-        </Text>
-        <Menu position="bottom-start" withinPortal={false}>
-          <Menu.Target>
-            <Button
-              variant="subtle"
-              color="gray"
-              size="compact-xs"
-              rightSection={<IconChevronDown size={14} stroke={1.5} />}
-            >
-              {activeFilter.label}
-            </Button>
-          </Menu.Target>
-          <Menu.Dropdown>
-            {FILTERS.map((filter, index) => (
-              <Menu.Item key={filter.label} onClick={() => setFilterIndex(index)}>
-                {filter.label}
-              </Menu.Item>
-            ))}
-          </Menu.Dropdown>
-        </Menu>
-      </Group>
-      <Divider />
       <Spotlight.ActionsList>
         {visible.length === 0 && search.length > 0 && !query.isLoading && (
           <Spotlight.Empty>Nothing found...</Spotlight.Empty>
@@ -127,6 +102,31 @@ export function DocsSearch() {
           </Spotlight.Action>
         ))}
       </Spotlight.ActionsList>
+      <Divider />
+      <Group gap="xs" px="md" py={8}>
+        <Text size="xs" c="dimmed" fw={500}>
+          Filter
+        </Text>
+        <Menu position="top-start" zIndex={10000}>
+          <Menu.Target>
+            <Button
+              variant="subtle"
+              color="gray"
+              size="compact-xs"
+              rightSection={<IconChevronDown size={14} stroke={1.5} />}
+            >
+              {activeFilter.label}
+            </Button>
+          </Menu.Target>
+          <Menu.Dropdown>
+            {FILTERS.map((filter, index) => (
+              <Menu.Item key={filter.label} onClick={() => setFilterIndex(index)}>
+                {filter.label}
+              </Menu.Item>
+            ))}
+          </Menu.Dropdown>
+        </Menu>
+      </Group>
     </Spotlight.Root>
   );
 }
