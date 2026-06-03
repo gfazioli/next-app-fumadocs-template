@@ -8,9 +8,9 @@ import { Callout, FileTree, Steps } from '@/components/mdx'
 import { FileTreeLabel } from '@/components/FileTreeLabel'
 
 Hello, world!
-Welcome to the Nextra + Mantine template.
+Welcome to the Fumadocs + Mantine template.
 
-This is a starter template for [Next.js](https://nextjs.org/) app router + [Mantine](https://mantine.dev/) + [Nextra](https://nextra.site/) documentation site.
+This is a starter template for a [Next.js](https://nextjs.org/) App Router + [Mantine](https://mantine.dev/) + [Fumadocs](https://www.fumadocs.dev/) documentation site — with a docs UI built **100% with Mantine** on top of the headless `fumadocs-core` (no Tailwind, no third-party docs theme).
 
 ## Features
 
@@ -20,15 +20,17 @@ This template comes with the following features:
 - [TypeScript](https://www.typescriptlang.org/)
 - [Storybook](https://storybook.js.org/)
 - [Jest](https://jestjs.io/) setup with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
-- ESLint setup with [eslint-config-mantine](https://github.com/mantinedev/eslint-config-mantine)
-- Provides API example in `/api/version`
+- [oxlint](https://oxc.rs/docs/guide/usage/linter) + [Stylelint](https://stylelint.io/) for linting and [oxfmt](https://oxc.rs/docs/guide/usage/formatter) for formatting
+- Provides API examples in `/api/version`, `/api/github-releases` and `/api/search`
 
-## Nextra Features
+## Fumadocs Features
 
-- [Nextra](https://nextra.site/) documentation site with Mantine theme
-- Sync Dark mode between documentation and application (Mantine/Nextra)
-- Customizable components in `components` folder
-- Provides new Navigation and Footer components for Nextra documentation site
+- [Fumadocs](https://www.fumadocs.dev/) content pipeline (`fumadocs-mdx`) with type-safe frontmatter
+- Docs UI entirely built with Mantine: sidebar, mobile drawer, breadcrumbs, table of contents with scroll-spy, previous/next navigation
+- Full-text search powered by [Orama](https://oramasearch.com/) and rendered with [Mantine Spotlight](https://mantine.dev/x/spotlight/) (try `⌘K`)
+- Build-time syntax highlighting (Shiki) with light/dark themes following the Mantine color scheme
+- GitHub alert syntax rendered with Mantine Alert
+- Customizable MDX components in `components/mdx`
 
 ## Folder structure
 
@@ -45,11 +47,17 @@ You will find a lot of predefined folders and files in the project. Here is a sh
     <FileTree.File name={<FileTreeLabel type="file" name="index.ts">Most of the config are here!</FileTreeLabel>} />
   </FileTree.Folder>
   <FileTree.Folder name={<FileTreeLabel type="folder" name="content">MDX docs</FileTreeLabel>} defaultOpen />
+  <FileTree.Folder name="lib" defaultOpen>
+    <FileTree.File name={<FileTreeLabel type="file" name="source.ts">Fumadocs content source</FileTreeLabel>} />
+  </FileTree.Folder>
 </FileTree>
 
 You can start by changing the main configuration in `config/index.ts` file. This file contains the most important configuration for the project.
 
-
+<Callout type="tip">
+  The sidebar order and labels are controlled by `content/docs/meta.json`, while each page's
+  title and description live in its MDX frontmatter.
+</Callout>
 
 ## npm scripts
 
@@ -62,14 +70,14 @@ You can start by changing the main configuration in `config/index.ts` file. This
 ### Testing scripts
 
 - `typecheck` – checks TypeScript types
-- `lint` – runs ESLint
-- `prettier:check` – checks files with Prettier
+- `lint` – runs oxlint and Stylelint
+- `format:test` – checks files formatting with oxfmt
 - `jest` – runs jest tests
 - `jest:watch` – starts jest watch
-- `test` – runs `jest`, `prettier:check`, `lint` and `typecheck` scripts
+- `test` – runs `format:test`, `lint`, `typecheck` and `jest` scripts
 
 ### Other scripts
 
 - `storybook` – starts storybook dev server
 - `storybook:build` – build production storybook bundle to `storybook-static`
-- `prettier:write` – formats all files with Prettier
+- `format:write` – formats all files with oxfmt

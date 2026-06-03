@@ -9,91 +9,64 @@ This starter kit provides a simple API for managing the state of the application
 >
 > You can find all the API routes in the `app/api` folder. The API is built using [Next.js](https://nextjs.org/) and is designed to be easy to use and understand.
 
-## Pagefind API
+## Search API
 
-Starting with Nextra v4, the search engine is built-in and uses [Pagefind](https://pagefind.app/). Unfortunately, the Pagefind API is only available on the client side, from the browser.
+The full-text search is powered by [Orama](https://oramasearch.com/) through
+`fumadocs-core/search/server`: at startup the route builds an in-memory index from the
+docs content source — no separate indexing step, no extra build command.
 
-> In this starter kit, we use a simple trick to make it work on the server side 👏 
+The whole route is two lines:
 
-You can try the API url [here](/api/search?q=mantine)
+```ts title="app/api/search/route.ts"
+export const { GET } = createFromSource(source, {
+  language: config.search.language,
+});
+```
+
+You can try the API url [here](/api/search?query=mantine)
 
 ### Default route
 
-The default URL is exposed at `https://your-site.com/api/search`.
+The default URL is exposed at `https://your-site.com/api/search?query=...`.
+
+### Client side
+
+The search UI is a [Mantine Spotlight](https://mantine.dev/x/spotlight/) fed by the
+headless `useDocsSearch` hook — open it with `⌘K` (or `/`). See
+`components/docs/DocsSearch.tsx`.
+
+```tsx title="components/docs/DocsSearch.tsx"
+const { search, setSearch, query } = useDocsSearch({ type: 'fetch' });
+```
+
+### Static export
+
+If you deploy as a fully static site (`output: 'export'`), switch the route to
+`staticGET` and the client hook to `type: 'static'` — the index is then exported as a
+static file and queried in the browser:
+
+```ts title="app/api/search/route.ts"
+export const { staticGET: GET } = createFromSource(source);
+export const revalidate = false;
+```
 
 ### Config
 
-The API accepts the following query parameters:
-
-- `q`: The search query.
-- `limit`: The number of results to return per page (default: 5).
-- `excerptLength`: The length of the excerpt to return (default: 30).
-
-Anyway, you can change the default values in the `config/index.ts` file:
+The search language can be changed in the `config/index.ts` file:
 
 ```ts title="config/index.ts"
-...
   /**
-   * Search configuration (for pagefind)
-   * This is used to configure the search engine API.
+   * Search configuration (Orama via fumadocs-core)
    * @see /app/api/search/route.ts
    */
   search: {
-    queryKeyword: 'q',
-    minQueryLength: 3,
-    limitKeyword: 'limit',
-    defaultMaxResults: 5,
-    excerptLengthKeyword: 'excerptLength',
-    defaultExcerptLength: 30,
-    defaultLanguage: 'en',
+    language: 'english',
   },
-...
-```
-
-### JSON response
-
-Currently, the API returns a JSON response with the following structure:
-
-```json
-[
-  {
-    "title": "Main Page title",
-    "content": "Some content",
-    "items": [
-      {
-        "title": "Sub Paragraph title",
-        "url": "http://yoursite.com/docs/your-docs",
-        "excerpt": "<mark>Mantine</mark> Components. Here you may use the <mark>Mantine</mark> components: Hello, world!"
-      }
-    ]
-  },
-  ...
-]
-```
-
-In TypeScript, the response is typed as follows:
-
-```ts
-interface Item {
-  title: string;
-  url: string;
-  excerpt: string;
-}
-
-interface Content {
-  title: string;
-  content: string;
-  items: Item[];
-}
-
-type Contents = Content[];
 ```
 
 ## GitHub Release API
 
 The GitHub Release API is a simple API that allows you to get the latest release of a GitHub repository. It is designed to be easy to use and understand, while also being powerful enough to handle complex use cases.
-
-Have a look at the [Release Notes](/docs/release-notes) page to see how to use it.
 
 ### Default route
 
@@ -114,21 +87,19 @@ You may configure the API in the `config/index.ts` file:
    * This information is used to fetch the releases from the GitHub API.
    */
   gitHub: {
-    repo: 'gfazioli/next-app-nextra-template',
+    repo: 'gfazioli/next-app-fumadocs-template',
     apiUrl: 'https://api.github.com',
-    releasesUrl: 'https://api.github.com/repos/gfazioli/next-app-nextra-template/releases',
+    releasesUrl: 'https://api.github.com/repos/gfazioli/next-app-fumadocs-template/releases',
   },
 
-...
   /**
    * Release notes configuration
    * This is used to link the release notes in the app.
    */
   releaseNotes: {
-    url: 'https://github.com/gfazioli/next-app-nextra-template/releases',
+    url: 'https://github.com/gfazioli/next-app-fumadocs-template/releases',
     maxReleases: 10,
   },
-  ...
 ```
 
 ### Rate limiting
@@ -137,8 +108,7 @@ The GitHub API has a rate limit of 60 requests per hour for unauthenticated requ
 
 You have to update `app/api/github-releases/route.ts`
 
-```ts {7}
-...
+```ts
     const response = await fetch(
       `${config.gitHub.releasesUrl}?per_page=${config.releaseNotes.maxReleases}`,
       {
@@ -148,5 +118,13 @@ You have to update `app/api/github-releases/route.ts`
         },
       }
     );
-...
-```    
+```
+
+## Version API
+
+The `/api/version` route returns the current version of the application, read from
+`package.json`:
+
+```json
+{ "version": "0.1.0" }
+```

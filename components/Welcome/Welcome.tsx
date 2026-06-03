@@ -29,7 +29,7 @@ export function Welcome() {
           }}
           gradient={{ from: 'pink', to: 'yellow' }}
         >
-          Nextra template
+          Fumadocs template
         </TextAnimate>
       </Title>
 

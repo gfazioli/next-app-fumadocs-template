@@ -1,7 +1,4 @@
-# Mantine Next.js + Nextra template
-
-<img width="1536" height="2044" alt="image" src="https://github.com/user-attachments/assets/008eb9b9-ba86-42b6-a5c6-72db3c21bc61" />
-
+# Mantine Next.js + Fumadocs template
 
 <div align="center">
 
@@ -9,7 +6,9 @@
 
 </div>
 
-This is a template for [Next.js](https://nextjs.org/) app router + [Mantine](https://mantine.dev/) + [Nextra](https://nextra.site/) documentation site.
+This is a template for a [Next.js](https://nextjs.org/) App Router + [Mantine](https://mantine.dev/) + [Fumadocs](https://www.fumadocs.dev/) documentation site.
+
+The docs UI is built **100% with Mantine** on top of the headless `fumadocs-core` — no Tailwind, no third-party docs theme, a single styling system for the whole app.
 
 ## Features
 
@@ -17,37 +16,41 @@ This template comes with the following features:
 
 - [Next.js 16](https://nextjs.org/) with App Router and Turbopack
 - [Mantine 9](https://mantine.dev/) UI component library
-- [Nextra 4](https://nextra.site/) documentation framework with Mantine theme sync
+- [Fumadocs](https://www.fumadocs.dev/) headless documentation engine (`fumadocs-core` + `fumadocs-mdx`)
 - [PostCSS](https://postcss.org/) with [mantine-postcss-preset](https://mantine.dev/styles/postcss-preset)
 - [TypeScript 6](https://www.typescriptlang.org/)
 - [Storybook](https://storybook.js.org/)
 - [Jest](https://jestjs.io/) setup with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 - [oxlint](https://oxc.rs/docs/guide/usage/linter) for linting
 - [oxfmt](https://oxc.rs/docs/guide/usage/formatter) for formatting
-- [Pagefind](https://pagefind.app/) server-side search API
+- [Orama](https://oramasearch.com/) full-text search served by `/api/search`
 - Turbopack inline SVG loader [turbopack-inline-svg-loader](https://github.com/vitalets/turbopack-inline-svg-loader)
 
-## Nextra Features
+## Fumadocs + Mantine Features
 
-- [Nextra](https://nextra.site/) documentation site with Mantine theme
-- Sync Dark mode between documentation and application (Mantine/Nextra)
-- Customizable components in `components` folder
-- Custom Navigation and Footer components for Nextra documentation site
+- Docs UI entirely built with Mantine: sidebar from the fumadocs page tree, mobile drawer, breadcrumbs, table of contents with scroll-spy, previous/next navigation
+- Search dialog with [Mantine Spotlight](https://mantine.dev/x/spotlight/) (`⌘K`), fed by the headless `useDocsSearch` hook
+- Build-time syntax highlighting (Shiki) with light/dark themes following the Mantine color scheme
+- GitHub alert syntax (`> [!NOTE]`) rendered with Mantine Alert
+- Mantine-native MDX components: Callout, Steps, FileTree — all customizable in `components/mdx`
+- Single source of truth for dark mode: Mantine color scheme manager (no `next-themes`)
 - GitHub Release Notes integration via API
 
 ## Folder structure
 
 - `app` – Next.js App Router pages, layouts, and API routes
-- `components` – shared components (usable in both documentation and application)
-- `content` – Nextra documentation site (`.mdx` and `_meta.ts` files)
+- `components` – shared components, including `components/docs` (docs shell) and `components/mdx` (MDX map)
+- `content/docs` – documentation content (`.mdx` files and `meta.json` for sidebar order)
 - `config` – centralized site configuration (metadata, GitHub API, search)
+- `lib/source.ts` – the fumadocs content source (loader)
+- `source.config.ts` – fumadocs-mdx collections and schemas
 
 ## npm scripts
 
 ### Build and dev scripts
 
 - `dev` – start dev server
-- `build` – bundle application for production (includes pagefind search index)
+- `build` – bundle application for production
 - `analyze` – analyzes application bundle with [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)
 
 ### Testing scripts
@@ -89,6 +92,6 @@ Your help truly matters.
 
 <div align="center">
 
-[![Star History Chart](https://api.star-history.com/svg?repos=gfazioli/next-app-nextra-template&type=Timeline)](https://www.star-history.com/#gfazioli/next-app-nextra-template&Timeline)
+[![Star History Chart](https://api.star-history.com/svg?repos=gfazioli/next-app-fumadocs-template&type=Timeline)](https://www.star-history.com/#gfazioli/next-app-fumadocs-template&Timeline)
 
 </div>
