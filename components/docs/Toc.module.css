@@ -5,21 +5,32 @@
   overflow-y: auto;
 }
 
-/* The rail lives on the list; the thumb slides along it */
 .list {
   position: relative;
-  border-left: rem(2px) solid var(--mantine-color-default-border);
+}
+
+/* The clerk thread: grey rail + primary thumb sliding along the same path */
+.thread {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.rail {
+  fill: none;
+  stroke: var(--mantine-color-default-border);
+  stroke-width: rem(2px);
 }
 
 .thumb {
-  position: absolute;
-  left: rem(-2px);
-  width: rem(2px);
-  border-radius: rem(1px);
-  background-color: var(--mantine-primary-color-filled);
+  fill: none;
+  stroke: var(--mantine-primary-color-filled);
+  stroke-width: rem(2px);
+  stroke-linecap: round;
   transition:
-    top 150ms ease,
-    height 150ms ease;
+    stroke-dashoffset 200ms ease,
+    stroke-dasharray 200ms ease;
 }
 
 .item {
@@ -34,7 +45,7 @@
     color: var(--mantine-color-text);
   }
 
-  &[data-active='true'] {
+  &[data-thread-active] {
     color: var(--mantine-primary-color-filled);
     font-weight: 500;
   }

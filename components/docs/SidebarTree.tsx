@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import cx from 'clsx';
 import type { Node, Root } from 'fumadocs-core/page-tree';
 import { NavLink, Text } from '@mantine/core';
 import classes from './SidebarTree.module.css';
@@ -29,12 +30,17 @@ function TreeNode({ node, pathname }: { node: Node; pathname: string }) {
   }
 
   if (node.type === 'folder') {
+    const active = hasActivePage(node, pathname);
+
     return (
       <NavLink
         label={node.name}
-        defaultOpened={node.defaultOpen || hasActivePage(node, pathname)}
-        childrenOffset={12}
-        className={classes.link}
+        leftSection={node.icon}
+        defaultOpened={node.defaultOpen || active}
+        classNames={{
+          root: cx(classes.link, classes.folder, active && classes.folderActive),
+          children: classes.children,
+        }}
       >
         {node.index && (
           <NavLink
@@ -42,6 +48,7 @@ function TreeNode({ node, pathname }: { node: Node; pathname: string }) {
             href={node.index.url}
             label={node.index.name}
             active={pathname === node.index.url}
+            variant="light"
             className={classes.link}
           />
         )}
@@ -57,6 +64,7 @@ function TreeNode({ node, pathname }: { node: Node; pathname: string }) {
       component={Link}
       href={node.url}
       label={node.name}
+      leftSection={node.icon}
       active={pathname === node.url}
       variant="light"
       className={classes.link}
