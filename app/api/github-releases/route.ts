@@ -1,6 +1,6 @@
 import config from '@/config';
 
-export async function GET(request: Request) {
+async function dynamicGET(request: Request) {
   try {
     const userAgent = request.headers.get('user-agent');
 
@@ -95,3 +95,13 @@ export async function GET(request: Request) {
     );
   }
 }
+
+/**
+ * In static export mode (GitHub Pages) dynamic request handling is not
+ * available — the route is pre-rendered as a static stub.
+ */
+function staticGET() {
+  return Response.json({ error: 'Not available in static export', releases: [] });
+}
+
+export const GET = process.env.NEXT_PUBLIC_STATIC_EXPORT === '1' ? staticGET : dynamicGET;
