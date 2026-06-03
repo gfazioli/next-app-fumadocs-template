@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { IconCheck, IconCopy } from '@tabler/icons-react';
+import cx from 'clsx';
 import { ActionIcon, Box, CopyButton, Group, Text, Tooltip } from '@mantine/core';
 import classes from './CodeBlock.module.css';
 
@@ -13,7 +14,7 @@ type CodeBlockProps = React.ComponentPropsWithoutRef<'pre'> & {
  * Mantine wrapper around the Shiki-highlighted `<pre>` produced at build
  * time by fumadocs rehype-code: optional title bar + copy button.
  */
-export function CodeBlock({ title, children, ...props }: CodeBlockProps) {
+export function CodeBlock({ title, children, className, ...props }: CodeBlockProps) {
   const preRef = useRef<HTMLPreElement>(null);
 
   const copyButton = (
@@ -53,7 +54,7 @@ export function CodeBlock({ title, children, ...props }: CodeBlockProps) {
       ) : (
         <Box className={classes.floatingCopy}>{copyButton}</Box>
       )}
-      <pre ref={preRef} {...props} className={classes.pre}>
+      <pre ref={preRef} {...props} className={cx(className, classes.pre)}>
         {children}
       </pre>
     </Box>

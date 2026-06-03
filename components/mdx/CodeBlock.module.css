@@ -27,8 +27,41 @@
 
 .pre {
   margin: 0;
-  padding: var(--mantine-spacing-sm) var(--mantine-spacing-md);
+  padding: var(--mantine-spacing-sm) 0;
   overflow-x: auto;
   font-size: var(--mantine-font-size-sm);
   line-height: 1.6;
+}
+
+/* Each Shiki line spans the full width so line highlights reach the edges */
+.pre :global(code) {
+  display: block;
+  min-width: max-content;
+}
+
+.pre :global(.line) {
+  display: inline-block;
+  width: 100%;
+  padding-inline: var(--mantine-spacing-md);
+}
+
+/* `{n}` line highlighting from the rehype-code transformers */
+.pre :global(.line.highlighted),
+.pre :global(.line[data-highlighted-line]) {
+  background-color: alpha(var(--mantine-primary-color-filled), 0.12);
+}
+
+/* ```ts {3} lineNumbers``` support */
+.pre:global([data-line-numbers]) {
+  counter-reset: shiki-line;
+}
+
+.pre:global([data-line-numbers]) :global(.line)::before {
+  counter-increment: shiki-line;
+  content: counter(shiki-line);
+  display: inline-block;
+  width: rem(24px);
+  margin-right: var(--mantine-spacing-md);
+  text-align: right;
+  color: var(--mantine-color-dimmed);
 }

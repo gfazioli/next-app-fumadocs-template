@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { IconAlignLeft, IconFileText, IconHash, IconSearch } from '@tabler/icons-react';
 import { useDocsSearch } from 'fumadocs-core/search/client';
-import { Group, Loader, Text } from '@mantine/core';
+import { Code, Group, Loader, Mark, Text } from '@mantine/core';
 import { Spotlight, spotlight } from '@mantine/spotlight';
 
 const typeIcon = {
@@ -11,6 +11,33 @@ const typeIcon = {
   heading: <IconHash size={18} stroke={1.5} />,
   text: <IconAlignLeft size={18} stroke={1.5} />,
 } as const;
+
+/**
+ * Search results come back as a Markdown-ish string where matches are
+ * wrapped in `<mark>` and inline code in backticks. Render both with
+ * Mantine components instead of showing the raw markup.
+ */
+function ResultContent({ content }: { content: string }) {
+  const parts = content.split(/(<mark>.*?<\/mark>|`[^`]+`)/g);
+
+  return (
+    <>
+      {parts.map((part, index) => {
+        if (part.startsWith('<mark>') && part.endsWith('</mark>')) {
+          return <Mark key={index}>{part.slice(6, -7)}</Mark>;
+        }
+        if (part.startsWith('`') && part.endsWith('`') && part.length > 2) {
+          return (
+            <Code key={index} fz="xs">
+              {part.slice(1, -1)}
+            </Code>
+          );
+        }
+        return part;
+      })}
+    </>
+  );
+}
 
 /**
  * Docs search dialog: Mantine Spotlight fed by the headless
@@ -46,8 +73,8 @@ export function DocsSearch() {
           >
             <Group gap="sm" wrap="nowrap" style={{ minWidth: 0 }}>
               {typeIcon[result.type as keyof typeof typeIcon] ?? typeIcon.text}
-              <Text size="sm" truncate>
-                {result.content}
+              <Text size="sm" truncate fw={result.type === 'page' ? 600 : undefined}>
+                <ResultContent content={String(result.content)} />
               </Text>
             </Group>
           </Spotlight.Action>

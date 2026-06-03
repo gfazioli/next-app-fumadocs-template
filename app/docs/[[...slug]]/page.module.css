@@ -13,6 +13,29 @@
   padding-bottom: var(--mantine-spacing-xl);
 }
 
+/* Article typography: spacing rhythm for plain markdown elements
+   (headings/links/tables/blockquotes are mapped to Mantine components) */
+.content article :global(p) {
+  margin-block: var(--mantine-spacing-sm);
+  line-height: 1.65;
+}
+
+.content article :global(ul),
+.content article :global(ol) {
+  margin-block: var(--mantine-spacing-sm);
+  padding-inline-start: var(--mantine-spacing-xl);
+}
+
+.content article :global(li) {
+  margin-block: rem(4px);
+  line-height: 1.6;
+}
+
+.content article :global(img) {
+  max-width: 100%;
+  border-radius: var(--mantine-radius-md);
+}
+
 .aside {
   min-width: 0;
 }

@@ -7,17 +7,25 @@
  */
 
 /* Shiki dual-theme code blocks (fumadocs rehype-code output).
-   The active palette follows the Mantine color scheme. */
-:root[data-mantine-color-scheme='light'] .shiki,
-:root[data-mantine-color-scheme='light'] .shiki span {
+   The active palette follows the Mantine color scheme.
+   The background lives on the <pre> only — token spans must stay
+   transparent so line highlights show through. */
+:root[data-mantine-color-scheme='light'] .shiki {
   color: var(--shiki-light);
   background-color: var(--shiki-light-bg);
 }
 
-:root[data-mantine-color-scheme='dark'] .shiki,
-:root[data-mantine-color-scheme='dark'] .shiki span {
+:root[data-mantine-color-scheme='light'] .shiki span {
+  color: var(--shiki-light);
+}
+
+:root[data-mantine-color-scheme='dark'] .shiki {
   color: var(--shiki-dark);
   background-color: var(--shiki-dark-bg);
+}
+
+:root[data-mantine-color-scheme='dark'] .shiki span {
+  color: var(--shiki-dark);
 }
 
 /* Inline code (block code is handled by the CodeBlock component) */
