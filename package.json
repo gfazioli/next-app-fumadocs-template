@@ -69,5 +69,5 @@
     "test": "npx fumadocs-mdx && npx next typegen && npm run format:test && npm run lint && npm run typecheck && npm run jest",
     "typecheck": "tsc --noEmit"
   },
-  "version": "0.1.0"
+  "version": "1.0.0"
 }
