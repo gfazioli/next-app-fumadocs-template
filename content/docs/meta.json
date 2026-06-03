@@ -1,0 +1,4 @@
+{
+  "title": "Documentation",
+  "pages": ["index", "markdown", "inline-svg", "mantine", "api", "versioning"]
+}

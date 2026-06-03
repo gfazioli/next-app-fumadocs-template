@@ -1,0 +1,29 @@
+.steps {
+  counter-reset: step;
+  margin-top: var(--mantine-spacing-lg);
+  margin-left: rem(16px);
+  padding-left: var(--mantine-spacing-xl);
+  border-left: 1px solid var(--mantine-color-default-border);
+}
+
+.steps :global(h3) {
+  counter-increment: step;
+  position: relative;
+}
+
+.steps :global(h3)::before {
+  content: counter(step);
+  position: absolute;
+  left: calc(-1 * var(--mantine-spacing-xl) - rem(17px));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(33px);
+  height: rem(33px);
+  border-radius: 50%;
+  background-color: var(--mantine-color-default-hover);
+  border: 4px solid var(--mantine-color-body);
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 500;
+  color: var(--mantine-color-text);
+}

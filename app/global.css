@@ -1,0 +1,21 @@
+/**
+ * App-level global styles.
+ *
+ * Unlike the Nextra-based template, there is no third-party docs theme here:
+ * the docs UI is built entirely with Mantine, so no cascade-layer
+ * reconciliation is needed.
+ */
+
+/* Shiki dual-theme code blocks (fumadocs rehype-code output).
+   The active palette follows the Mantine color scheme. */
+:root[data-mantine-color-scheme='light'] .shiki,
+:root[data-mantine-color-scheme='light'] .shiki span {
+  color: var(--shiki-light);
+  background-color: var(--shiki-light-bg);
+}
+
+:root[data-mantine-color-scheme='dark'] .shiki,
+:root[data-mantine-color-scheme='dark'] .shiki span {
+  color: var(--shiki-dark);
+  background-color: var(--shiki-dark-bg);
+}

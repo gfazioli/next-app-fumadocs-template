@@ -1,0 +1,100 @@
+---
+title: Markdown
+description: GitHub alert syntax and MDX components rendered with Mantine
+---
+
+import { Callout, Steps } from '@/components/mdx'
+
+This template renders Markdown and MDX through [fumadocs](https://www.fumadocs.dev) with a
+fully Mantine-based component map: every HTML tag produced by your `.mdx` files is rendered
+with a Mantine component (headings, links, tables, blockquotes, and so on).
+
+It also supports the
+[GitHub alert syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts),
+rendered with a Mantine Alert.
+
+## Usage
+
+> [!NOTE]
+>
+> Useful information that users should know, even when skimming content.
+
+```md title="Markdown"
+> [!NOTE]
+>
+> Useful information that users should know, even when skimming content.
+```
+
+> [!TIP]
+>
+> Helpful advice for doing things better or more easily.
+
+```md title="Markdown"
+> [!TIP]
+>
+> Helpful advice for doing things better or more easily.
+```
+
+> [!IMPORTANT]
+>
+> Key information users need to know to achieve their goal.
+
+```md title="Markdown"
+> [!IMPORTANT]
+>
+> Key information users need to know to achieve their goal.
+```
+
+> [!WARNING]
+>
+> Urgent info that needs immediate user attention to avoid problems.
+
+```md title="Markdown"
+> [!WARNING]
+>
+> Urgent info that needs immediate user attention to avoid problems.
+```
+
+> [!CAUTION]
+>
+> Advises about risks or negative outcomes of certain actions.
+
+```md title="Markdown"
+> [!CAUTION]
+>
+> Advises about risks or negative outcomes of certain actions.
+```
+
+## How it works
+
+<Steps>
+
+### The blockquote mapping
+
+The MDX component map in `components/mdx/index.tsx` maps the `blockquote` tag to a
+component that detects the `[!TYPE]` marker in the first paragraph. When found, the
+blockquote renders as a Mantine Alert of the matching type; otherwise it renders as a
+regular Mantine Blockquote.
+
+### The Callout component
+
+You can also use the Callout component directly in your MDX files:
+
+```mdx
+import { Callout } from '@/components/mdx'
+
+<Callout type="tip" title="Pro tip">
+  You can customize everything with Mantine props.
+</Callout>
+```
+
+<Callout type="tip" title="Pro tip">
+  You can customize everything with Mantine props.
+</Callout>
+
+### Customize it
+
+All the MDX components live in `components/mdx/` — they are plain Mantine components,
+so you can restyle them with the usual Mantine theme tokens and Styles API.
+
+</Steps>
