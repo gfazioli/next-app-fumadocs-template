@@ -106,6 +106,11 @@ search language), the Mantine theme in `theme.ts`, and the landing page in
 
 ## Deploy
 
-The template works out of the box on [Vercel](https://vercel.com/): import the
-repository and deploy — no configuration needed. For a fully static export, see the
-[Search guide](/docs/guides/search) for the one-line change required by the search API.
+Two first-class options:
+
+- **Vercel** — import the repository and deploy, no configuration needed. Dynamic
+  search API, GitHub releases proxy, the works.
+- **GitHub Pages** — fully static: `yarn build:static` produces a static export
+  (static Orama search index included), and the bundled workflow
+  `.github/workflows/deploy-pages.yml` publishes it automatically on every push to
+  `main`. See the [Search guide](/docs/guides/search) for details.

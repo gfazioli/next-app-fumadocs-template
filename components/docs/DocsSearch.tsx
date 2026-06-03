@@ -54,9 +54,14 @@ function ResultContent({ content }: { content: string }) {
  * `useDocsSearch` hook (Orama index served by /api/search), with an
  * ESC hint and a Filter row driven by `config.search.filters`.
  */
+const isStaticExport = process.env.NEXT_PUBLIC_STATIC_EXPORT === '1';
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 export function DocsSearch() {
   const router = useRouter();
-  const { search, setSearch, query } = useDocsSearch({ type: 'fetch' });
+  const { search, setSearch, query } = useDocsSearch(
+    isStaticExport ? { type: 'static', from: `${basePath}/api/search` } : { type: 'fetch' }
+  );
   const [filterIndex, setFilterIndex] = useState(0);
 
   const results = query.data !== 'empty' && query.data ? query.data : [];

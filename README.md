@@ -64,6 +64,11 @@ This template comes with the following features:
 
 The shipped documentation doubles as a feature tour: Getting Started, MDX Components showcase, Customize UI and Search guides.
 
+## Deploy
+
+- **Vercel** (default): import the repo and deploy — dynamic search API and GitHub releases proxy included.
+- **GitHub Pages** (fully static): `yarn build:static` produces a static export with a pre-rendered Orama search index; the bundled `.github/workflows/deploy-pages.yml` workflow publishes it on every push to `main`. Live demo: [gfazioli.github.io/next-app-fumadocs-template](https://gfazioli.github.io/next-app-fumadocs-template/)
+
 ## Why headless (no Tailwind)?
 
 `fumadocs-ui` — the official theme — is built on Tailwind CSS v4. Pairing it with Mantine means maintaining two styling systems and reconciling their cascade layers. This template instead consumes only the headless `fumadocs-core` (page tree, TOC scroll-spy, breadcrumbs, search — zero styling opinions) and paints everything with Mantine. One design system, one theme, no conflicts — and the docs UI lives in your repo as plain React + Mantine code you can freely edit.

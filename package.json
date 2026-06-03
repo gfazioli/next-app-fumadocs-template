@@ -51,6 +51,7 @@
   "scripts": {
     "analyze": "ANALYZE=true next build",
     "build": "next build",
+    "build:static": "node scripts/static-export-prepare.mjs && NEXT_PUBLIC_STATIC_EXPORT=1 next build",
     "dev": "next dev",
     "oxlint": "oxlint .",
     "jest": "jest",

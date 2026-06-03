@@ -11,8 +11,24 @@ const withBundleAnalyzer = bundleAnalyzer({
  */
 const withMDX = createMDX();
 
+/**
+ * Dual deploy mode:
+ * - default: server build (Vercel, Node) with dynamic API routes
+ * - NEXT_PUBLIC_STATIC_EXPORT=1: fully static export for GitHub Pages —
+ *   static Orama search index, no dynamic API routes, optional basePath
+ *   via NEXT_PUBLIC_BASE_PATH (e.g. "/next-app-fumadocs-template").
+ */
+const isStaticExport = process.env.NEXT_PUBLIC_STATIC_EXPORT === '1';
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 export default withMDX(
   withBundleAnalyzer({
+    ...(isStaticExport && {
+      output: 'export',
+      basePath,
+      trailingSlash: true,
+      images: { unoptimized: true },
+    }),
     reactStrictMode: false,
     cleanDistDir: true,
     experimental: {

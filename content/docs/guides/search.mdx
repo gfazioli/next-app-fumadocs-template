@@ -45,22 +45,20 @@ Results are grouped by page, heading and text. Matches arrive wrapped in
 
 ## Static export
 
-For a serverless deployment (`output: 'export'`, e.g. GitHub Pages) switch to the
-static index — the whole index is exported at build time and queried in the browser:
+For a serverless deployment (e.g. GitHub Pages) the template ships a built-in static
+mode — no code changes required:
 
-```ts title="app/api/search/route.ts"
-export const { staticGET: GET } = createFromSource(source);
-export const revalidate = false;
+```bash title="Terminal"
+yarn build:static
 ```
 
-```tsx title="components/docs/DocsSearch.tsx"
-import { create } from '@orama/orama';
-
-const { search, setSearch, query } = useDocsSearch({
-  type: 'static',
-  initOrama: (locale) => create({ schema: { _: 'string' }, language: locale }),
-});
-```
+With `NEXT_PUBLIC_STATIC_EXPORT=1` the whole Orama index is pre-rendered as a static
+file at `/api/search`, and the search dialog automatically switches to
+`useDocsSearch({ type: 'static' })`: the index is downloaded once and queried in the
+browser. The repository also includes a ready-made GitHub Actions workflow
+(`.github/workflows/deploy-pages.yml`) that publishes the static build to GitHub
+Pages on every push to `main` — set `NEXT_PUBLIC_BASE_PATH` there if the site is
+served under a sub-path.
 
 <Callout type="warning" title="Index size">
   With the static mode the browser downloads the entire index. Fine for small and
