@@ -1,19 +1,25 @@
 'use client';
 
+import Link from 'next/link';
 import { TextAnimate } from '@gfazioli/mantine-text-animate';
-import { IconBrandGithub, IconExternalLink } from '@tabler/icons-react';
-import { Anchor, Button, Center, Code, Paper, Text, Title } from '@mantine/core';
+import { IconBook, IconBrandGithub, IconExternalLink } from '@tabler/icons-react';
+import { Anchor, Button, Code, Group, Paper, Text, Title } from '@mantine/core';
 import pack from '../../package.json';
-import { ProductHunt } from '../ProductHunt/ProductHunt';
 import classes from './Welcome.module.css';
+
+// Product Hunt badge — re-enable the import and the block below
+// after launching the template on Product Hunt.
+// import { ProductHunt } from '../ProductHunt/ProductHunt';
 
 export function Welcome() {
   return (
     <>
+      {/*
       <Center my={64}>
         <ProductHunt />
       </Center>
-      <Title maw="90vw" mx="auto" className={classes.title} ta="center">
+      */}
+      <Title maw="90vw" mx="auto" pt={64} className={classes.title} ta="center">
         Welcome to Mantine Next.js +
         <TextAnimate
           animate="in"
@@ -33,14 +39,24 @@ export function Welcome() {
         </TextAnimate>
       </Title>
 
-      <Text c="dimmed" ta="center" size="xl" maw={580} mx="auto" mt="sm">
-        This starter Next.js project includes a minimal setup for server side rendering, if you want
-        to learn more on Mantine + Next.js integration follow{' '}
-        <Anchor href="https://mantine.dev/guides/next/">this guide</Anchor>. To get started edit{' '}
-        <Code fz="xl">page.tsx</Code> file.
+      <Text c="dimmed" ta="center" size="xl" maw={620} mx="auto" mt="sm">
+        A documentation starter with Next.js App Router, Mantine 9 and the headless Fumadocs engine
+        — docs UI built 100% with Mantine, no Tailwind. Write your pages in{' '}
+        <Code fz="xl">content/docs</Code>, and if you want to learn more about the Mantine + Next.js
+        integration follow <Anchor href="https://mantine.dev/guides/next/">this guide</Anchor>.
       </Text>
 
-      <Center>
+      <Group justify="center" gap="md" mt="xl">
+        <Button
+          component={Link}
+          href="/docs"
+          leftSection={<IconBook size={20} />}
+          px={32}
+          radius={256}
+          size="lg"
+        >
+          Read the docs
+        </Button>
         <Button
           href="https://github.com/gfazioli/next-app-fumadocs-template"
           component="a"
@@ -50,12 +66,10 @@ export function Welcome() {
           px={32}
           radius={256}
           size="lg"
-          mx="auto"
-          mt="xl"
         >
           Use template v{pack.version}
         </Button>
-      </Center>
+      </Group>
 
       <Paper shadow="xl" p={8} mih={300} my={32} bg="black" mx="auto" radius={8}>
         <TextAnimate.Typewriter
