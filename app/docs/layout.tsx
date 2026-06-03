@@ -1,13 +1,12 @@
-import { Container } from '@mantine/core';
+import { DocsShell } from '@/components/docs/DocsShell';
+import { source } from '@/lib/source';
 
 /**
- * Docs section layout. The full Mantine docs shell (sidebar + TOC)
- * is layered on top of this in the DocsShell component.
+ * Docs section layout: sidebar (desktop) + drawer (mobile), all Mantine.
+ * The page tree is serialized here (server) and rehydrated in the client shell.
  */
-export default function DocsLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <Container size="xl" py="xl">
-      {children}
-    </Container>
-  );
+export default async function DocsLayout({ children }: { children: React.ReactNode }) {
+  const tree = await source.serializePageTree(source.getPageTree());
+
+  return <DocsShell tree={tree}>{children}</DocsShell>;
 }

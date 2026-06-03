@@ -12,6 +12,7 @@ import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from '@mantine/c
 // !! End of important imports !!
 
 import { MantineFooter, MantineNavBar } from '@/components';
+import { DocsSearch } from '@/components/docs/DocsSearch';
 import config from '@/config';
 import { theme } from '../theme';
 
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <MantineNavBar />
             {children}
             <MantineFooter />
+            <DocsSearch />
           </MantineProvider>
         </NextProvider>
         <Analytics />

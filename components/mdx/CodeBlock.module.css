@@ -1,0 +1,34 @@
+.root {
+  position: relative;
+  margin-block: var(--mantine-spacing-md);
+  border: 1px solid var(--mantine-color-default-border);
+  border-radius: var(--mantine-radius-md);
+  overflow: hidden;
+}
+
+.header {
+  padding: rem(6px) var(--mantine-spacing-sm);
+  background-color: var(--mantine-color-default-hover);
+  border-bottom: 1px solid var(--mantine-color-default-border);
+}
+
+.floatingCopy {
+  position: absolute;
+  top: rem(8px);
+  right: rem(8px);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 100ms ease;
+}
+
+.root:hover .floatingCopy {
+  opacity: 1;
+}
+
+.pre {
+  margin: 0;
+  padding: var(--mantine-spacing-sm) var(--mantine-spacing-md);
+  overflow-x: auto;
+  font-size: var(--mantine-font-size-sm);
+  line-height: 1.6;
+}

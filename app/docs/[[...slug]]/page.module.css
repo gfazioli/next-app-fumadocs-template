@@ -1,0 +1,18 @@
+.page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--mantine-spacing-xl);
+
+  @media (min-width: $mantine-breakpoint-lg) {
+    grid-template-columns: minmax(0, 1fr) rem(220px);
+  }
+}
+
+.content {
+  min-width: 0;
+  padding-bottom: var(--mantine-spacing-xl);
+}
+
+.aside {
+  min-width: 0;
+}

@@ -1,0 +1,32 @@
+.shell {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--mantine-spacing-xl);
+  max-width: rem(1440px);
+  margin-inline: auto;
+  padding-inline: var(--mantine-spacing-md);
+
+  @media (min-width: $mantine-breakpoint-md) {
+    grid-template-columns: rem(260px) minmax(0, 1fr);
+  }
+}
+
+.sidebar {
+  position: sticky;
+  top: rem(60px);
+  height: calc(100dvh - rem(60px));
+  border-right: 1px solid var(--mantine-color-default-border);
+}
+
+.main {
+  min-width: 0;
+  padding-block: var(--mantine-spacing-md);
+}
+
+.mobileBar {
+  position: sticky;
+  top: rem(60px);
+  z-index: 50;
+  background-color: var(--mantine-color-body);
+  border-bottom: 1px solid var(--mantine-color-default-border);
+}

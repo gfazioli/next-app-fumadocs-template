@@ -3,6 +3,7 @@ import type { MDXComponents } from 'mdx/types';
 import { Anchor, Divider, Table, TableScrollContainer, Title } from '@mantine/core';
 import { GitHubAlertBlockquote } from './Blockquote';
 
+import { CodeBlock } from './CodeBlock';
 import { FileTreeFile, FileTreeFolder, FileTreeRoot } from './FileTree';
 
 export { Callout } from './Callout';
@@ -39,6 +40,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     h5: (props) => <Title order={5} mt="md" mb="xs" {...props} />,
     h6: (props) => <Title order={6} mt="md" mb="xs" {...props} />,
     a: ({ href, ...props }) => <Anchor component={Link} href={href ?? '#'} {...props} />,
+    pre: (props) => <CodeBlock {...props} />,
     hr: () => <Divider my="lg" />,
     blockquote: (props) => <GitHubAlertBlockquote {...props} />,
     table: (props) => (

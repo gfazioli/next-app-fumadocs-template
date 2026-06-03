@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { IconBrandDiscord, IconBrandGithub } from '@tabler/icons-react';
 import { ActionIcon, Anchor, Box, Group, Text, Tooltip } from '@mantine/core';
 import config from '@/config';
+import { SearchTrigger } from '../docs/SearchTrigger';
 import { ColorSchemeControl } from '../ColorSchemeControl/ColorSchemeControl';
 import { Logo } from '../Logo/Logo';
 import classes from './MantineNavBar.module.css';
@@ -30,6 +31,8 @@ export const MantineNavBar = () => {
           <Anchor component={Link} href="/docs" size="sm" c="dimmed" underline="never" px="xs">
             Docs
           </Anchor>
+
+          <SearchTrigger />
 
           <Tooltip label="Discord">
             <ActionIcon

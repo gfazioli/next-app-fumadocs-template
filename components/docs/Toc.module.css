@@ -1,0 +1,26 @@
+.toc {
+  position: sticky;
+  top: rem(76px);
+  max-height: calc(100dvh - rem(92px));
+  overflow-y: auto;
+  padding-left: var(--mantine-spacing-md);
+  border-left: 1px solid var(--mantine-color-default-border);
+}
+
+.item {
+  display: block;
+  padding-block: rem(4px);
+  font-size: var(--mantine-font-size-sm);
+  color: var(--mantine-color-dimmed);
+  text-decoration: none;
+  transition: color 100ms ease;
+
+  &:hover {
+    color: var(--mantine-color-text);
+  }
+
+  &[data-active='true'] {
+    color: var(--mantine-primary-color-filled);
+    font-weight: 500;
+  }
+}
