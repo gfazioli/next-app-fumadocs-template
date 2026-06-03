@@ -42,7 +42,8 @@ export function Callout({ type = 'note', title, children }: CalloutProps) {
       title={title ?? defaultTitle}
       icon={icon}
       radius="md"
-      classNames={{ root: classes.root }}
+      style={{ '--callout-color': `var(--mantine-color-${color}-filled)` } as React.CSSProperties}
+      classNames={{ root: classes.root, title: classes.title, icon: classes.icon }}
     >
       {children}
     </Alert>

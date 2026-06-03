@@ -1,4 +1,12 @@
 .root {
-  border-inline-start: rem(3px) solid var(--alert-color, var(--mantine-primary-color-filled));
+  border-inline-start: rem(3px) solid var(--callout-color, var(--mantine-primary-color-filled));
   background-color: var(--mantine-color-default-hover);
+}
+
+.title {
+  color: var(--callout-color, var(--mantine-primary-color-filled));
+}
+
+.icon {
+  color: var(--callout-color, var(--mantine-primary-color-filled));
 }
