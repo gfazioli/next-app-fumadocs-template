@@ -10946,6 +10946,7 @@ __metadata:
     fumadocs-mdx: "npm:15.0.10"
     jest: "npm:^30.4.2"
     jest-environment-jsdom: "npm:^30.4.1"
+    marked: "npm:^18.0.4"
     next: "npm:16.2.7"
     oxfmt: "npm:^0.53.0"
     oxlint: "npm:^1.68.0"
@@ -10977,6 +10978,15 @@ __metadata:
   version: 3.0.4
   resolution: "markdown-table@npm:3.0.4"
   checksum: 10c0/1257b31827629a54c24a5030a3dac952256c559174c95ce3ef89bebd6bff0cb1444b1fd667b1a1bb53307f83278111505b3e26f0c4e7b731e0060d435d2d930b
+  languageName: node
+  linkType: hard
+
+"marked@npm:^18.0.4":
+  version: 18.0.4
+  resolution: "marked@npm:18.0.4"
+  bin:
+    marked: bin/marked.js
+  checksum: 10c0/f54dcbb39d3acdcd0356f7629b42811eec56db5f6daef7404e582cdf800f5b598b681f9f8a187e7f51262e37c607f5e0cd9880e56b5c8160a49c3f7828e9e459
   languageName: node
   linkType: hard
 

@@ -66,8 +66,8 @@ The shipped documentation doubles as a feature tour: Getting Started, MDX Compon
 
 ## Deploy
 
-- **Vercel** (default): import the repo and deploy — dynamic search API and GitHub releases proxy included.
-- **GitHub Pages** (fully static): `yarn build:static` produces a static export with a pre-rendered Orama search index; the bundled `.github/workflows/deploy-pages.yml` workflow publishes it on every push to `main`. Live demo: [gfazioli.github.io/next-app-fumadocs-template](https://gfazioli.github.io/next-app-fumadocs-template/)
+- **GitHub Pages** (fully static — this is how the live demo is hosted): `yarn build:static` produces a static export with a pre-rendered Orama search index; the bundled `.github/workflows/deploy-pages.yml` workflow publishes it on every push to `main`. Release notes are fetched by the browser directly from the GitHub API. **Live demo: [gfazioli.github.io/next-app-fumadocs-template](https://gfazioli.github.io/next-app-fumadocs-template/)**
+- **Vercel / Node**: import the repo and deploy — the search API turns dynamic (the client stays lightweight) and the GitHub releases go through the bundled proxy with optional token.
 
 ## Why headless (no Tailwind)?
 

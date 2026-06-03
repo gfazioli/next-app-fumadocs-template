@@ -1,0 +1,18 @@
+---
+title: Release Notes
+description: Latest releases of this template, live from GitHub
+---
+
+import { ReleaseNotes } from '@/components/ReleaseNotes'
+
+This page renders the repository releases **live from the GitHub API** with a Mantine
+Timeline — the release bodies are GitHub-flavored Markdown.
+
+> [!NOTE]
+>
+> On the static build (GitHub Pages) the browser fetches the releases directly from
+> the GitHub API (CORS-enabled, 60 unauthenticated requests per hour per visitor).
+> On a server deployment the bundled `/api/github-releases` proxy is used instead,
+> with optional `GITHUB_TOKEN` and bot filtering.
+
+<ReleaseNotes />
