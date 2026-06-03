@@ -3,22 +3,32 @@
   top: rem(76px);
   max-height: calc(100dvh - rem(92px));
   overflow-y: auto;
-  padding-left: var(--mantine-spacing-md);
 }
 
-/* Continuous rail on the left; the active item lights up its segment */
+/* The rail lives on the list; the thumb slides along it */
+.list {
+  position: relative;
+  border-left: rem(2px) solid var(--mantine-color-default-border);
+}
+
+.thumb {
+  position: absolute;
+  left: rem(-2px);
+  width: rem(2px);
+  border-radius: rem(1px);
+  background-color: var(--mantine-primary-color-filled);
+  transition:
+    top 150ms ease,
+    height 150ms ease;
+}
+
 .item {
   display: block;
   padding-block: rem(4px);
-  margin-left: calc(-1 * var(--mantine-spacing-md));
-  padding-left: var(--mantine-spacing-md);
-  border-left: rem(2px) solid var(--mantine-color-default-border);
   font-size: var(--mantine-font-size-sm);
   color: var(--mantine-color-dimmed);
   text-decoration: none;
-  transition:
-    color 100ms ease,
-    border-color 100ms ease;
+  transition: color 100ms ease;
 
   &:hover {
     color: var(--mantine-color-text);
@@ -26,7 +36,6 @@
 
   &[data-active='true'] {
     color: var(--mantine-primary-color-filled);
-    border-left-color: var(--mantine-primary-color-filled);
     font-weight: 500;
   }
 }

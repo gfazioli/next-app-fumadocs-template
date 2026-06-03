@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'fumadocs-core/link';
 import { getBreadcrumbItems } from 'fumadocs-core/breadcrumb';
 import { findNeighbour } from 'fumadocs-core/page-tree';
-import { Anchor, Box, Breadcrumbs, Text, Title } from '@mantine/core';
+import { Anchor, Box, Breadcrumbs, Divider, Text, Title } from '@mantine/core';
 import { PageFooter } from '@/components/docs/PageFooter';
 import { Toc } from '@/components/docs/Toc';
 import { getMDXComponents } from '@/components/mdx';
@@ -29,15 +29,15 @@ export default async function Page(props: Props) {
   return (
     <Box className={classes.page}>
       <Box className={classes.content}>
-        {breadcrumbs.length > 1 && (
-          <Breadcrumbs mb="md" separatorMargin={6}>
+        {breadcrumbs.length > 0 && (
+          <Breadcrumbs mb="xs" separatorMargin={6}>
             {breadcrumbs.map((item, index) =>
               item.url ? (
-                <Anchor key={index} component={Link} href={item.url} size="sm" c="dimmed">
+                <Anchor key={index} component={Link} href={item.url} size="sm" fw={600}>
                   {item.name}
                 </Anchor>
               ) : (
-                <Text key={index} size="sm" c="dimmed">
+                <Text key={index} size="sm" fw={600} c="var(--mantine-primary-color-filled)">
                   {item.name}
                 </Text>
               )
@@ -50,10 +50,11 @@ export default async function Page(props: Props) {
             {page.data.title}
           </Title>
           {page.data.description && (
-            <Text c="dimmed" size="lg" mb="xl">
+            <Text c="dimmed" size="lg">
               {page.data.description}
             </Text>
           )}
+          <Divider my="lg" />
           <MDX components={getMDXComponents()} />
         </article>
 

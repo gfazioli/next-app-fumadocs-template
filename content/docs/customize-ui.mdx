@@ -1,0 +1,115 @@
+---
+title: Customize UI
+description: A complete guide on how to customize the Mantine docs UI
+---
+
+import { Callout, Steps } from '@/components/mdx'
+
+Unlike themes based on Tailwind or CSS overrides, **everything you see is a Mantine
+component living in your repository** — there is no third-party UI package to fight
+with. Customizing the docs UI means editing plain React + Mantine code.
+
+<Callout type="tip">
+  The docs UI is split in two folders: `components/docs` (shell: sidebar, TOC, search)
+  and `components/mdx` (content: callouts, code blocks, steps...). Everything else is
+  standard Mantine theming.
+</Callout>
+
+## Theme tokens
+
+The fastest way to restyle the whole site is the Mantine theme in `theme.ts` — primary
+color, fonts, radius, spacing:
+
+```ts title="theme.ts"
+export const theme = createTheme({
+  primaryColor: 'grape',
+  defaultRadius: 'md',
+  fontFamily: 'Inter, sans-serif',
+});
+```
+
+Every accent in the docs UI (active sidebar item, TOC indicator, links, line
+highlights) follows `primaryColor` automatically, because the components only use
+Mantine CSS variables like `--mantine-primary-color-filled`.
+
+## The docs shell
+
+<Steps>
+
+### Sidebar
+
+`components/docs/SidebarTree.tsx` renders the fumadocs page tree with Mantine
+[NavLink](https://mantine.dev/core/nav-link/). Restyle it via
+`SidebarTree.module.css` or swap `NavLink` for your own component. The sidebar order
+and section labels come from `content/docs/meta.json`:
+
+```json title="content/docs/meta.json"
+{
+  "pages": ["---Getting Started---", "index", "getting-started"]
+}
+```
+
+`---Label---` entries become section labels; folders become collapsible groups.
+
+### Table of contents
+
+`components/docs/Toc.tsx` uses the headless `fumadocs-core/toc` primitives
+(`AnchorProvider`, `TOCItem`, `useActiveAnchor`) — the scroll-spy logic is free, the
+look is yours. The moving indicator is ~20 lines in `TocThumb`; the rail and colors
+live in `Toc.module.css`.
+
+### Search dialog
+
+`components/docs/DocsSearch.tsx` is a Mantine
+[Spotlight](https://mantine.dev/x/spotlight/) fed by `useDocsSearch`. Change the
+shortcut, the result rendering, or replace Spotlight entirely — the data layer does
+not care.
+
+### Layout
+
+`components/docs/DocsShell.tsx` is a CSS-grid layout (sidebar + content) with a
+`Drawer` on mobile. The page chrome (breadcrumbs, title, prev/next footer) lives in
+`app/docs/[[...slug]]/page.tsx`.
+
+</Steps>
+
+## MDX components
+
+`components/mdx/index.tsx` maps every HTML tag produced by your Markdown to a Mantine
+component:
+
+```tsx title="components/mdx/index.tsx"
+export function getMDXComponents(components?: MDXComponents): MDXComponents {
+  return {
+    h2: (props) => <Title order={2} mt="xl" mb="sm" {...props} />,
+    a: ({ href, ...props }) => <Anchor component={Link} href={href ?? '#'} {...props} />,
+    pre: (props) => <CodeBlock {...props} />,
+    // ...
+  };
+}
+```
+
+Add your own components to the map and use them in every page without importing them.
+
+## Code block themes
+
+Syntax highlighting uses Shiki dual themes (`github-light` / `github-dark`), switched
+by the Mantine color scheme in `app/global.css`. To change the themes, configure
+`rehypeCodeOptions` in `source.config.ts`:
+
+```ts title="source.config.ts"
+export default defineConfig({
+  mdxOptions: {
+    rehypeCodeOptions: {
+      themes: { light: 'catppuccin-latte', dark: 'catppuccin-mocha' },
+    },
+  },
+});
+```
+
+## Dark mode
+
+There is a single source of truth: the Mantine color scheme manager. The toggle in
+the navbar calls `setColorScheme()` — no `next-themes`, no class syncing. Anything
+that needs to react to the scheme can use `useMantineColorScheme()` or the
+`[data-mantine-color-scheme]` attribute in CSS.

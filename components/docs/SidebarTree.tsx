@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import type { Node, Root } from 'fumadocs-core/page-tree';
 import { NavLink, Text } from '@mantine/core';
+import classes from './SidebarTree.module.css';
 
 function hasActivePage(node: Node, pathname: string): boolean {
   if (node.type === 'page') {
@@ -21,7 +22,7 @@ function hasActivePage(node: Node, pathname: string): boolean {
 function TreeNode({ node, pathname }: { node: Node; pathname: string }) {
   if (node.type === 'separator') {
     return (
-      <Text size="xs" fw={700} c="dimmed" mt="md" mb={4} px="sm">
+      <Text className={classes.label} mt="lg" mb={6} px="sm">
         {node.name}
       </Text>
     );
@@ -33,6 +34,7 @@ function TreeNode({ node, pathname }: { node: Node; pathname: string }) {
         label={node.name}
         defaultOpened={node.defaultOpen || hasActivePage(node, pathname)}
         childrenOffset={12}
+        className={classes.link}
       >
         {node.index && (
           <NavLink
@@ -40,6 +42,7 @@ function TreeNode({ node, pathname }: { node: Node; pathname: string }) {
             href={node.index.url}
             label={node.index.name}
             active={pathname === node.index.url}
+            className={classes.link}
           />
         )}
         {node.children.map((child, index) => (
@@ -50,7 +53,14 @@ function TreeNode({ node, pathname }: { node: Node; pathname: string }) {
   }
 
   return (
-    <NavLink component={Link} href={node.url} label={node.name} active={pathname === node.url} />
+    <NavLink
+      component={Link}
+      href={node.url}
+      label={node.name}
+      active={pathname === node.url}
+      variant="light"
+      className={classes.link}
+    />
   );
 }
 

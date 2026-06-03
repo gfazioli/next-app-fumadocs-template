@@ -1,0 +1,111 @@
+---
+title: Getting Started
+description: Create your documentation site in a few minutes
+---
+
+import { Callout, FileTree, Steps } from '@/components/mdx'
+
+<Steps>
+
+### Create the project
+
+Use the **Use this template** button on the
+[GitHub repository](https://github.com/gfazioli/next-app-fumadocs-template), or clone it
+directly:
+
+```bash title="Terminal"
+git clone https://github.com/gfazioli/next-app-fumadocs-template my-docs
+cd my-docs
+```
+
+### Install the dependencies
+
+The project uses [Yarn 4](https://yarnpkg.com/) (Berry). The `postinstall` script also
+generates the `.source` folder used by Fumadocs:
+
+```bash title="Terminal"
+yarn install
+```
+
+<Callout type="warning" title="Yarn only">
+  Do not use npm or pnpm: the repository ships a pinned Yarn release in `.yarn/releases`
+  and a `yarn.lock` lockfile.
+</Callout>
+
+### Start the dev server
+
+```bash title="Terminal"
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) — the landing page lives at `/` and
+the documentation at `/docs`.
+
+### Write your first page
+
+Every `.mdx` file inside `content/docs` becomes a page. The frontmatter `title` is
+required, `description` is optional but recommended:
+
+```mdx title="content/docs/hello.mdx"
+---
+title: Hello World
+description: My first page
+---
+
+Welcome to **my docs**!
+```
+
+Then add the page to the sidebar order in `content/docs/meta.json`:
+
+```json title="content/docs/meta.json"
+{
+  "pages": ["index", "hello"]
+}
+```
+
+### Make it yours
+
+Update the site configuration in `config/index.ts` (metadata, GitHub repository,
+search language), the Mantine theme in `theme.ts`, and the landing page in
+`app/page.tsx`.
+
+</Steps>
+
+## Project anatomy
+
+<FileTree>
+  <FileTree.Folder name="app" defaultOpen>
+    <FileTree.Folder name="docs">
+      <FileTree.File name="[[...slug]]/page.tsx" />
+      <FileTree.File name="layout.tsx" />
+    </FileTree.Folder>
+    <FileTree.Folder name="api" />
+    <FileTree.File name="layout.tsx" />
+    <FileTree.File name="page.tsx" />
+  </FileTree.Folder>
+  <FileTree.Folder name="components" defaultOpen>
+    <FileTree.Folder name="docs" />
+    <FileTree.Folder name="mdx" />
+  </FileTree.Folder>
+  <FileTree.Folder name="content" defaultOpen>
+    <FileTree.Folder name="docs" defaultOpen>
+      <FileTree.File name="index.mdx" />
+      <FileTree.File name="meta.json" />
+    </FileTree.Folder>
+  </FileTree.Folder>
+  <FileTree.Folder name="lib">
+    <FileTree.File name="source.ts" />
+  </FileTree.Folder>
+  <FileTree.File name="source.config.ts" />
+</FileTree>
+
+- `content/docs` — your MDX content and the `meta.json` sidebar order
+- `components/mdx` — the MDX component map: every HTML tag is rendered with Mantine
+- `components/docs` — the docs shell: sidebar, table of contents, search dialog
+- `lib/source.ts` + `source.config.ts` — the Fumadocs content pipeline
+
+## Deploy
+
+The template works out of the box on [Vercel](https://vercel.com/): import the
+repository and deploy — no configuration needed. For a fully static export, see the
+[Search guide](/docs/search) for the one-line change required by the search API.

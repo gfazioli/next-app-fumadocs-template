@@ -1,4 +1,19 @@
 {
   "title": "Documentation",
-  "pages": ["index", "markdown", "inline-svg", "mantine", "api", "versioning"]
+  "pages": [
+    "---Getting Started---",
+    "index",
+    "getting-started",
+    "---Guides---",
+    "markdown",
+    "components",
+    "customize-ui",
+    "search",
+    "---Examples---",
+    "mantine",
+    "inline-svg",
+    "---Reference---",
+    "api",
+    "versioning"
+  ]
 }

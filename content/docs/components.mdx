@@ -1,0 +1,134 @@
+---
+title: MDX Components
+description: All the Mantine-based components available in your MDX content
+---
+
+import { Button, Center } from '@mantine/core';
+import { Callout, FileTree, Steps } from '@/components/mdx'
+
+Every component on this page is rendered with [Mantine](https://mantine.dev/) — you can
+restyle all of them through the Mantine theme. They live in `components/mdx`, ready to be
+customized.
+
+## Callout
+
+Five semantic types, built on [Alert](https://mantine.dev/core/alert/):
+
+<Callout type="note">Useful information that users should know.</Callout>
+<Callout type="tip">Helpful advice for doing things better.</Callout>
+<Callout type="important">Key information users need to know.</Callout>
+<Callout type="warning">Urgent info that needs immediate attention.</Callout>
+<Callout type="caution">Advises about risks or negative outcomes.</Callout>
+
+```mdx
+import { Callout } from '@/components/mdx'
+
+<Callout type="tip" title="Custom title">Helpful advice for doing things better.</Callout>
+```
+
+You can also use the [GitHub alert syntax](/docs/markdown) in plain Markdown blockquotes.
+
+## Steps
+
+Numbered steps with a connector line — just nest `h3` headings inside:
+
+<Steps>
+
+### Install the package
+
+Nothing fancy: any Markdown content works inside a step.
+
+### Configure it
+
+Including code blocks, callouts and lists.
+
+### Profit
+
+That's it.
+
+</Steps>
+
+```mdx
+import { Steps } from '@/components/mdx'
+
+<Steps>
+
+### Install the package
+
+### Configure it
+
+### Profit
+
+</Steps>
+```
+
+## FileTree
+
+<FileTree>
+  <FileTree.Folder name="app" defaultOpen>
+    <FileTree.File name="layout.tsx" />
+    <FileTree.File name="page.tsx" />
+  </FileTree.Folder>
+  <FileTree.Folder name="components" />
+</FileTree>
+
+```mdx
+import { FileTree } from '@/components/mdx'
+
+<FileTree>
+  <FileTree.Folder name="app" defaultOpen>
+    <FileTree.File name="layout.tsx" />
+  </FileTree.Folder>
+</FileTree>
+```
+
+## Code blocks
+
+Code is highlighted at **build time** with [Shiki](https://shiki.style/) — zero
+client-side JavaScript — and follows the Mantine color scheme. Add a title with the
+`title` meta:
+
+```ts title="lib/source.ts"
+export const source = loader({
+  baseUrl: '/docs',
+  source: docs.toFumadocsSource(),
+});
+```
+
+Highlight specific lines with `{n}`:
+
+```ts {2}
+const a = 1;
+const highlighted = 'this line pops';
+const b = 2;
+```
+
+Inline code like `const x = 1` is styled too.
+
+## Tables
+
+Markdown tables are rendered with the Mantine [Table](https://mantine.dev/core/table/)
+component, scrollable on small screens:
+
+| Component | Mantine counterpart | Where        |
+| --------- | ------------------- | ------------ |
+| Callout   | Alert               | `components/mdx/Callout.tsx` |
+| Steps     | CSS counters        | `components/mdx/Steps.tsx` |
+| FileTree  | Collapse + icons    | `components/mdx/FileTree.tsx` |
+
+## Mantine components, directly
+
+Since the whole app shares one styling system, you can drop **any** Mantine component
+straight into your MDX:
+
+<Center my="lg">
+  <Button>I am a Mantine Button inside MDX</Button>
+</Center>
+
+```mdx
+import { Button, Center } from '@mantine/core';
+
+<Center my="lg">
+  <Button>I am a Mantine Button inside MDX</Button>
+</Center>
+```

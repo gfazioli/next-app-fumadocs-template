@@ -1,0 +1,28 @@
+.link {
+  border-radius: var(--mantine-radius-sm);
+  padding-block: rem(6px);
+  font-size: var(--mantine-font-size-sm);
+  color: var(--mantine-color-dimmed);
+
+  &:hover {
+    color: var(--mantine-color-text);
+  }
+
+  &[data-active] {
+    color: var(--mantine-primary-color-light-color);
+    background-color: var(--mantine-primary-color-light);
+    font-weight: 500;
+
+    &:hover {
+      background-color: var(--mantine-primary-color-light-hover);
+    }
+  }
+}
+
+.label {
+  font-size: var(--mantine-font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--mantine-color-text);
+}

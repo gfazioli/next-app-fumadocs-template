@@ -1,0 +1,4 @@
+.root {
+  border-inline-start: rem(3px) solid var(--alert-color, var(--mantine-primary-color-filled));
+  background-color: var(--mantine-color-default-hover);
+}

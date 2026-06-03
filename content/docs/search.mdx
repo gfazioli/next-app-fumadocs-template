@@ -1,0 +1,79 @@
+---
+title: Search
+description: Full-text search with Orama and Mantine Spotlight
+---
+
+import { Callout, Steps } from '@/components/mdx'
+
+The template ships a complete full-text search: the index is built by
+[Orama](https://oramasearch.com/) from your docs content, and the dialog is a Mantine
+[Spotlight](https://mantine.dev/x/spotlight/). Try it now with `⌘K` (or `/`).
+
+## How it works
+
+<Steps>
+
+### The index
+
+`app/api/search/route.ts` builds an Orama index from the content source at startup —
+no separate indexing command, the index is always in sync with your content:
+
+```ts title="app/api/search/route.ts"
+import { createFromSource } from 'fumadocs-core/search/server';
+
+export const { GET } = createFromSource(source, {
+  language: config.search.language,
+});
+```
+
+### The client hook
+
+`components/docs/DocsSearch.tsx` uses the headless `useDocsSearch` hook, which
+debounces the query and fetches `/api/search`:
+
+```tsx title="components/docs/DocsSearch.tsx"
+const { search, setSearch, query } = useDocsSearch({ type: 'fetch' });
+```
+
+### The dialog
+
+Results are grouped by page, heading and text. Matches arrive wrapped in
+`<mark>` tags and are rendered with the Mantine
+[Mark](https://mantine.dev/core/mark/) component.
+
+</Steps>
+
+## Static export
+
+For a serverless deployment (`output: 'export'`, e.g. GitHub Pages) switch to the
+static index — the whole index is exported at build time and queried in the browser:
+
+```ts title="app/api/search/route.ts"
+export const { staticGET: GET } = createFromSource(source);
+export const revalidate = false;
+```
+
+```tsx title="components/docs/DocsSearch.tsx"
+import { create } from '@orama/orama';
+
+const { search, setSearch, query } = useDocsSearch({
+  type: 'static',
+  initOrama: (locale) => create({ schema: { _: 'string' }, language: locale }),
+});
+```
+
+<Callout type="warning" title="Index size">
+  With the static mode the browser downloads the entire index. Fine for small and
+  medium sites; for large ones prefer the route-handler mode or a hosted provider
+  (Orama Cloud, Algolia — both supported by fumadocs-core).
+</Callout>
+
+## Language
+
+Stemming and tokenization follow the language configured in `config/index.ts`:
+
+```ts title="config/index.ts"
+search: {
+  language: 'english',
+},
+```
