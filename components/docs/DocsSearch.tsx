@@ -102,7 +102,7 @@ export function DocsSearch() {
           </Spotlight.Action>
         ))}
       </Spotlight.ActionsList>
-      <Divider />
+      {visible.length > 0 && <Divider />}
       <Group gap="xs" px="md" py={8}>
         <Text size="xs" c="dimmed" fw={500}>
           Filter
