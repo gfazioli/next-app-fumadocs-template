@@ -86,8 +86,18 @@ export default {
   /**
    * Search configuration (Orama via fumadocs-core)
    * @see /app/api/search/route.ts
+   *
+   * `filters` drives the Filter row of the search dialog: each entry
+   * matches results whose URL starts with one of the prefixes
+   * (empty prefixes = no filtering).
    */
   search: {
     language: 'english',
+    filters: [
+      { label: 'All', prefixes: [] as string[] },
+      { label: 'Guides', prefixes: ['/docs/guides'] },
+      { label: 'Examples', prefixes: ['/docs/mantine', '/docs/inline-svg'] },
+      { label: 'Reference', prefixes: ['/docs/api', '/docs/versioning'] },
+    ],
   },
 } as const;
