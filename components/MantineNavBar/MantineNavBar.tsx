@@ -63,8 +63,8 @@ export const MantineNavBar = () => {
           <ColorSchemeControl />
 
           <Button
-            component="a"
-            href="#sponsors"
+            component={Link}
+            href="/#sponsors"
             size="sm"
             radius="xl"
             variant="gradient"

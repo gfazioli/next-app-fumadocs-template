@@ -35,8 +35,9 @@ export function Welcome() {
           }}
           gradient={{ from: 'pink', to: 'yellow' }}
         >
-          Fumadocs template
+          Fumadocs
         </TextAnimate>
+        template
       </Title>
 
       <Text c="dimmed" ta="center" size="xl" maw={620} mx="auto" mt="sm">
