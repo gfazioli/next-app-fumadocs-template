@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { IconBrandDiscord, IconBrandGithub } from '@tabler/icons-react';
-import { ActionIcon, Anchor, Box, Group, Text, Tooltip } from '@mantine/core';
+import { IconBrandDiscord, IconBrandGithub, IconHeartFilled } from '@tabler/icons-react';
+import { ActionIcon, Anchor, Box, Button, Group, Text, Tooltip } from '@mantine/core';
 import config from '@/config';
 import { SearchTrigger } from '../docs/SearchTrigger';
 import { ColorSchemeControl } from '../ColorSchemeControl/ColorSchemeControl';
@@ -62,13 +62,18 @@ export const MantineNavBar = () => {
 
           <ColorSchemeControl />
 
-          <iframe
-            src="https://github.com/sponsors/gfazioli/button"
-            title="Sponsor gfazioli"
-            height="32"
-            width="114"
-            style={{ border: 0 }}
-          />
+          <Button
+            component="a"
+            href="#sponsors"
+            size="sm"
+            radius="xl"
+            variant="gradient"
+            gradient={{ from: 'pink', to: 'grape' }}
+            leftSection={<IconHeartFilled size={14} />}
+            visibleFrom="sm"
+          >
+            Sponsor
+          </Button>
         </Group>
       </Group>
     </Box>

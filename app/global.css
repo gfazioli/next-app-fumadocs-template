@@ -6,6 +6,11 @@
  * reconciliation is needed.
  */
 
+/* Smooth scrolling for in-page anchors (e.g. the #sponsors footer wall) */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Shiki dual-theme code blocks (fumadocs rehype-code output).
    The active palette follows the Mantine color scheme.
    The background lives on the <pre> only — token spans must stay
