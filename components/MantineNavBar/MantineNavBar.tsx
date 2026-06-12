@@ -1,8 +1,13 @@
 'use client';
 
 import Link from 'next/link';
-import { IconBrandDiscord, IconBrandGithub, IconHeartFilled } from '@tabler/icons-react';
-import { ActionIcon, Anchor, Box, Button, Group, Text, Tooltip } from '@mantine/core';
+import {
+  IconBrandDiscord,
+  IconBrandGithub,
+  IconCoffee,
+  IconHeartFilled,
+} from '@tabler/icons-react';
+import { ActionIcon, Anchor, Box, Group, Text, Tooltip } from '@mantine/core';
 import config from '@/config';
 import { SearchTrigger } from '../docs/SearchTrigger';
 import { ColorSchemeControl } from '../ColorSchemeControl/ColorSchemeControl';
@@ -62,18 +67,37 @@ export const MantineNavBar = () => {
 
           <ColorSchemeControl />
 
-          <Button
-            component={Link}
-            href="/#sponsors"
-            size="sm"
-            radius="xl"
-            variant="gradient"
-            gradient={{ from: 'pink', to: 'grape' }}
-            leftSection={<IconHeartFilled size={14} />}
-            visibleFrom="sm"
-          >
-            Sponsor
-          </Button>
+          <Tooltip label="Sponsor" withArrow>
+            <ActionIcon
+              component={Link}
+              href="/#sponsors"
+              size="lg"
+              radius="xl"
+              variant="gradient"
+              gradient={{ from: 'pink', to: 'grape' }}
+              aria-label="Sponsor"
+              visibleFrom="sm"
+            >
+              <IconHeartFilled size={16} />
+            </ActionIcon>
+          </Tooltip>
+          <Tooltip label="Buy me a coffee" withArrow>
+            <ActionIcon
+              component="a"
+              href="https://donate.stripe.com/fZu4gy4Tn3b1dgudGx0co00"
+              target="_blank"
+              rel="noopener noreferrer"
+              size="lg"
+              radius="xl"
+              variant="filled"
+              color="yellow"
+              aria-label="Buy me a coffee"
+              visibleFrom="sm"
+              styles={{ root: { color: 'var(--mantine-color-white)' } }}
+            >
+              <IconCoffee size={16} />
+            </ActionIcon>
+          </Tooltip>
         </Group>
       </Group>
     </Box>
