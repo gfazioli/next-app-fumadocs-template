@@ -1,3 +1,10 @@
+# Static export → GitHub Pages artifact → Pages deploy.
+#
+# The `uses:` refs are pinned to commit SHAs with a trailing version comment
+# rather than to floating major tags: a tag is mutable, so `@v7` would follow
+# wherever that tag is moved. `.github/dependabot.yml` keeps the pins current
+# with one grouped weekly PR, so pinning does not mean going stale.
+
 name: Deploy to GitHub Pages
 
 on:
@@ -9,6 +16,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: read # documented requirement of deploy-pages' artifact-ID path
 
 concurrency:
   group: pages
@@ -21,9 +29,11 @@ jobs:
       NEXT_PUBLIC_STATIC_EXPORT: '1'
       NEXT_PUBLIC_BASE_PATH: /next-app-fumadocs-template
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: 24
 
@@ -39,9 +49,10 @@ jobs:
       - name: Disable Jekyll
         run: touch out/.nojekyll
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: out
+          include-hidden-files: true # v4 stopped bundling dotfiles; `out/.nojekyll` is one
 
   deploy:
     needs: build
@@ -51,4 +62,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
