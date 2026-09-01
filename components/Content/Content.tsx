@@ -60,7 +60,7 @@ export const Content = () => {
           title="Mantine Extensions Hub"
           description="Browse 25+ Mantine UI extensions — split panes, onboarding tours, players, parallax and more — ready to drop into this template."
           beamProps={{
-            beamMode: 'path',
+            beamMode: 'dot',
             colorFrom: 'cyan',
             colorTo: 'indigo',
             size: 'lg',
@@ -73,10 +73,10 @@ export const Content = () => {
           title="Nextra template"
           description="Prefer Nextra? The same starter powered by Nextra 4 and the classic docs theme, fully integrated with Mantine."
           beamProps={{
-            beamMode: 'conic',
+            beamMode: 'wedge',
             colorFrom: 'pink',
             colorTo: 'grape',
-            size: 'md',
+            spread: 72,
             duration: 8,
             reverse: true,
           }}
