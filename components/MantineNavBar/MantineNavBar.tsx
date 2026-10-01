@@ -11,6 +11,7 @@ import { ActionIcon, Anchor, Box, Group, Text, Tooltip } from '@mantine/core';
 import config from '@/config';
 import { SearchTrigger } from '../docs/SearchTrigger';
 import { ColorSchemeControl } from '../ColorSchemeControl/ColorSchemeControl';
+import { HeaderControl } from '../ColorSchemeControl/HeaderControl';
 import { Logo } from '../Logo/Logo';
 import classes from './MantineNavBar.module.css';
 
@@ -26,8 +27,11 @@ export const MantineNavBar = () => {
         <Anchor component={Link} href="/" underline="never">
           <Group align="center" gap={4} wrap="nowrap">
             <Logo />
-            <Text size="lg" fw={300} c="blue" visibleFrom="sm">
-              Mantine NextJS + Fumadocs
+            <Text size="xl" fw={600} ff="heading" c="var(--mantine-color-text)" visibleFrom="sm">
+              Mantine{' '}
+              <Text span inherit c="blue">
+                NextJS + Fumadocs
+              </Text>
             </Text>
           </Group>
         </Anchor>
@@ -39,14 +43,14 @@ export const MantineNavBar = () => {
 
           <SearchTrigger />
 
-          <Tooltip label="Discord">
+          <Tooltip label="Mantine Discord server">
             <ActionIcon
               component="a"
               href="https://discord.com/invite/wbH82zuWMN"
               target="_blank"
               variant="subtle"
               color="gray"
-              aria-label="Discord"
+              aria-label="Mantine Discord server"
             >
               <IconBrandDiscord size={20} stroke={1.5} />
             </ActionIcon>
@@ -67,37 +71,22 @@ export const MantineNavBar = () => {
 
           <ColorSchemeControl />
 
-          <Tooltip label="Sponsor" withArrow>
-            <ActionIcon
-              component={Link}
-              href="/#sponsors"
-              size="lg"
-              radius="xl"
-              variant="gradient"
-              gradient={{ from: 'pink', to: 'grape' }}
-              aria-label="Sponsor"
-              visibleFrom="sm"
-            >
-              <IconHeartFilled size={16} />
-            </ActionIcon>
-          </Tooltip>
-          <Tooltip label="Buy me a coffee" withArrow>
-            <ActionIcon
-              component="a"
-              href="https://donate.stripe.com/fZu4gy4Tn3b1dgudGx0co00"
-              target="_blank"
-              rel="noopener noreferrer"
-              size="lg"
-              radius="xl"
-              variant="filled"
-              color="yellow"
-              aria-label="Buy me a coffee"
-              visibleFrom="sm"
-              styles={{ root: { color: 'var(--mantine-color-white)' } }}
-            >
-              <IconCoffee size={16} />
-            </ActionIcon>
-          </Tooltip>
+          {/* Same square controls as the colour-scheme toggle (mantine.dev's header style), with
+              the icon carrying the colour: Mantine red and orange. The sponsors wall is on the
+              home page, hence `/#sponsors`. */}
+          <HeaderControl component={Link} href="/#sponsors" tooltip="Sponsor" visibleFrom="sm">
+            <IconHeartFilled size={18} color="var(--mantine-color-red-6)" />
+          </HeaderControl>
+          <HeaderControl
+            component="a"
+            href="https://donate.stripe.com/fZu4gy4Tn3b1dgudGx0co00"
+            target="_blank"
+            rel="noopener noreferrer"
+            tooltip="Buy me a coffee"
+            visibleFrom="sm"
+          >
+            <IconCoffee size={18} stroke={1.8} color="var(--mantine-color-orange-6)" />
+          </HeaderControl>
         </Group>
       </Group>
     </Box>

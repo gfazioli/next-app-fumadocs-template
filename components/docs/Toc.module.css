@@ -9,7 +9,9 @@
   position: relative;
 }
 
-/* The clerk thread: grey rail + primary thumb sliding along the same path */
+/* The clerk thread: grey rail + primary thumb sliding along the same path. The thumb and the
+   active item use the anchor colour (primary 6 on light, 4 on dark): primary-filled is shade 8 in
+   dark mode, 3.09:1 on the #242424 page. */
 .thread {
   position: absolute;
   top: 0;
@@ -25,7 +27,7 @@
 
 .thumb {
   fill: none;
-  stroke: var(--mantine-primary-color-filled);
+  stroke: var(--mantine-color-anchor);
   stroke-width: rem(2px);
   stroke-linecap: round;
   transition:
@@ -46,7 +48,7 @@
   }
 
   &[data-thread-active] {
-    color: var(--mantine-primary-color-filled);
+    color: var(--mantine-color-anchor);
     font-weight: 500;
   }
 }
