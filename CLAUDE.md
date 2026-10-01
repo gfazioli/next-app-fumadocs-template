@@ -48,8 +48,10 @@ This is a **Next.js 16 + Mantine 9 + Fumadocs (headless)** template: a documenta
 
 ### Theming
 
-- Mantine color scheme manager only (`MantineProvider` + `ColorSchemeScript`); no next-themes
+- Mantine color scheme manager only (`MantineProvider` + `ColorSchemeScript`); no next-themes. **Light by default** (`head.mantine.defaultColorScheme` in `config/index.ts`, and the `useComputedColorScheme` fallback in `ColorSchemeControl`); a stored choice beats the default, so check it in a private window
 - Shiki dual themes are driven by `[data-mantine-color-scheme]` in `app/global.css` (CSS vars `--shiki-light/dark`)
+- **The mantine.dev look** (since 2026-10-01, the same as the Mantine Extensions hub): Outfit for headings through `next/font` (`--font-outfit`, read by `theme.ts`), Mantine's system stack for text, and the page on Mantine's body colours (`#fff` / `#242424`) from `theme/global.css`. Keep accents on primary tokens (`--mantine-primary-color-light`, `--mantine-color-anchor`) rather than hard-coded blue, so changing `primaryColor` still re-colours the docs UI; the TOC uses the anchor colour because primary-filled is shade 8 in dark mode, 3.09:1 on the page
+- **No global Button override**: `theme/global.css` used to turn every `.mantine-Button-root` into a pill with a hover scale, beating the `radius` prop. Buttons now render with Mantine's own radius and variants
 
 ### API Routes (`app/api/`)
 
