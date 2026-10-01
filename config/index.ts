@@ -9,7 +9,9 @@ export default {
       template: '%s | Mantine Next.js and Fumadocs template',
     },
     description: 'I am using Mantine with Next.js and Fumadocs!',
-    metadataBase: new URL('https://next-app-fumadocs-template.vercel.app/'),
+    // Where the site is published (GitHub Pages, see .github/workflows/deploy-pages.yml), base
+    // path included: the canonical and og:url of every page are resolved against it.
+    metadataBase: new URL('https://gfazioli.github.io/next-app-fumadocs-template/'),
     keywords: [
       'Mantine',
       'Fumadocs',
@@ -36,7 +38,8 @@ export default {
       'msapplication-TileColor': '#fff',
     },
     twitter: {
-      site: 'https://next-app-fumadocs-template.vercel.app/',
+      site: '@gfazioli',
+      creator: '@gfazioli',
     },
     alternates: {
       // https://github.com/vercel/next.js/discussions/50189#discussioncomment-10826632

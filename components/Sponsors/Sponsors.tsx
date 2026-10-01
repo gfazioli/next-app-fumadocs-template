@@ -7,7 +7,7 @@ import classes from './Sponsors.module.css';
 
 // Social share — "spread the word" buttons rendered below the sponsor CTAs.
 // Share-intent links (no SDK); brand marks are inline SVGs (fill=currentColor).
-const shareUrl = 'https://next-app-fumadocs-template.vercel.app/';
+const shareUrl = 'https://gfazioli.github.io/next-app-fumadocs-template/';
 const shareText = 'Check out this Mantine + Next.js + Fumadocs template';
 const encodedUrl = encodeURIComponent(shareUrl);
 const encodedText = encodeURIComponent(shareText);

@@ -1,4 +1,4 @@
-# https://next-app-nextra-template.vercel.app/robots.txt
+# https://gfazioli.github.io/next-app-fumadocs-template/robots.txt
 #
 # Search engines are welcome.
 User-agent: Googlebot
