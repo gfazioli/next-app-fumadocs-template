@@ -101,3 +101,5 @@ Disallow: /
 # Default rule for everything else
 User-agent: *
 Allow: /
+
+Sitemap: https://gfazioli.github.io/next-app-fumadocs-template/sitemap.xml

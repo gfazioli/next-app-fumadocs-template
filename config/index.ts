@@ -8,7 +8,8 @@ export default {
       default: 'Mantine Next.js and Fumadocs template',
       template: '%s | Mantine Next.js and Fumadocs template',
     },
-    description: 'I am using Mantine with Next.js and Fumadocs!',
+    description:
+      'A Next.js App Router starter with Mantine 9 and headless Fumadocs: a docs UI built 100% with Mantine, with full-text search, MDX and dark mode.',
     // Where the site is published (GitHub Pages, see .github/workflows/deploy-pages.yml), base
     // path included: the canonical and og:url of every page are resolved against it.
     metadataBase: new URL('https://gfazioli.github.io/next-app-fumadocs-template/'),

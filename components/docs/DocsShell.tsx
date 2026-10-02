@@ -88,7 +88,7 @@ export function DocsShell({ tree, children }: DocsShellProps) {
         </Group>
       </Box>
 
-      <Box className={classes.main}>
+      <Box component="main" className={classes.main}>
         <Group hiddenFrom="md" py="xs" className={classes.mobileBar}>
           <Burger opened={opened} onClick={open} size="sm" aria-label="Open docs navigation" />
           <Group gap={6}>
