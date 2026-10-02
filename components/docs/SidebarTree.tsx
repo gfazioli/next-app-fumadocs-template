@@ -34,6 +34,9 @@ function TreeNode({ node, pathname }: { node: Node; pathname: string }) {
 
     return (
       <NavLink
+        // A folder only opens and closes its children: a button, not a link without an href,
+        // which crawlers cannot follow (Lighthouse crawlable-anchors).
+        component="button"
         label={node.name}
         leftSection={node.icon}
         defaultOpened={node.defaultOpen || active}
