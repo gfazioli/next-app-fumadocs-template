@@ -2423,16 +2423,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gfazioli/mantine-border-animate@npm:^3.0.4":
-  version: 3.0.4
-  resolution: "@gfazioli/mantine-border-animate@npm:3.0.4"
+"@gfazioli/mantine-border-animate@npm:^3.0.5":
+  version: 3.0.5
+  resolution: "@gfazioli/mantine-border-animate@npm:3.0.5"
   peerDependencies:
     "@mantine/core": ">=9.0.0"
     "@mantine/hooks": ">=9.0.0"
     "@tabler/icons-react": ^3.34.0
     react: ^18.x || ^19.x
     react-dom: ^18.x || ^19.x
-  checksum: 10c0/4884cff4b9cad47a57d512d24dd8308ed52c374a5749f30d8a8edbbdc47ec3d5627faea8d881c0ac3ca09b88e8b68647de40284759c4be44560b0484ea7d82d2
+  checksum: 10c0/90fa5807d95438d4ed47c249e4ff32a3a8a54558ff9ee0fd6bbaa72bc3f556214e4cabbc16b57156d6c5554719aad5d70996539a501686a3eaf0881a8e0645cd
   languageName: node
   linkType: hard
 
@@ -2448,15 +2448,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gfazioli/mantine-text-animate@npm:^4.0.14":
-  version: 4.0.14
-  resolution: "@gfazioli/mantine-text-animate@npm:4.0.14"
+"@gfazioli/mantine-text-animate@npm:^4.0.15":
+  version: 4.0.15
+  resolution: "@gfazioli/mantine-text-animate@npm:4.0.15"
   peerDependencies:
     "@mantine/core": ">=9.0.0"
     "@mantine/hooks": ">=9.0.0"
     react: ^18.x || ^19.x
     react-dom: ^18.x || ^19.x
-  checksum: 10c0/a2ed875f6b54a69e99f68211427fb4fce80ed0334c01032bc5e546ef9262a8c922d822df50ee21e212e280f493ace44d670457a7e85f99f5992549c635070382
+  checksum: 10c0/68f43b2a9c22dfa769e486acba35cb3417eede6120fae6e7addb615eee23c4ec91717a8fb68b34075c8535ac58f70e647a0d9b18798ebdbc5cc407ce9ced0d15
   languageName: node
   linkType: hard
 
@@ -3259,9 +3259,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/core@npm:9.7.0":
-  version: 9.7.0
-  resolution: "@mantine/core@npm:9.7.0"
+"@mantine/core@npm:9.7.1":
+  version: 9.7.1
+  resolution: "@mantine/core@npm:9.7.1"
   dependencies:
     "@floating-ui/react": "npm:^0.27.20"
     clsx: "npm:^2.1.1"
@@ -3269,42 +3269,42 @@ __metadata:
     react-remove-scroll: "npm:^2.7.2"
     type-fest: "npm:^5.10.0"
   peerDependencies:
-    "@mantine/hooks": 9.7.0
+    "@mantine/hooks": 9.7.1
     react: ^19.2.0
     react-dom: ^19.2.0
-  checksum: 10c0/d2fe8e854f90672d10b34851f87e1b8a579bc827b868df1f29ca26e0cde4055885e968d2d9eb37496485d70779845eb2f0c372f5c83884baf9478bfad396ede2
+  checksum: 10c0/bdd21cffab0a6c1c24ae4f74b4c96d9fb9a4c8b7fe2dc878666997562a17af7a671e52f8b47b9de7ef828e4363b23d446bc01c8a46292a2c20dbdc191a180ea9
   languageName: node
   linkType: hard
 
-"@mantine/hooks@npm:9.7.0":
-  version: 9.7.0
-  resolution: "@mantine/hooks@npm:9.7.0"
+"@mantine/hooks@npm:9.7.1":
+  version: 9.7.1
+  resolution: "@mantine/hooks@npm:9.7.1"
   peerDependencies:
     react: ^19.2.0
-  checksum: 10c0/0ac3e53dd886a018979d1c360b05e5e70198e7c6c42b993da73d5360c5e489393b5400d6fe1e76196cad23c985ba5feecccdf16863b547ebac36eb46f233e69d
+  checksum: 10c0/25ebdbc7e1aa6f04baab346507fca70f052ef55dc278ea0c3ae0dbf883a32bed89dab67df2efb592b19e5908148f46c35b4e94cb950c8ae82a9c268bff887768
   languageName: node
   linkType: hard
 
-"@mantine/spotlight@npm:9.7.0":
-  version: 9.7.0
-  resolution: "@mantine/spotlight@npm:9.7.0"
+"@mantine/spotlight@npm:9.7.1":
+  version: 9.7.1
+  resolution: "@mantine/spotlight@npm:9.7.1"
   dependencies:
-    "@mantine/store": "npm:9.7.0"
+    "@mantine/store": "npm:9.7.1"
   peerDependencies:
-    "@mantine/core": 9.7.0
-    "@mantine/hooks": 9.7.0
+    "@mantine/core": 9.7.1
+    "@mantine/hooks": 9.7.1
     react: ^19.2.0
     react-dom: ^19.2.0
-  checksum: 10c0/4ef6d396401682e73d029f684fc97681052dce5cb09c8a30c9a17cf1ffc48f69462cb87ba35858d8b9640811d06f1dda367631752e99e9f534f8e41627e0a007
+  checksum: 10c0/24cd7b6681f8c7c8f9d5718543b9ce8d828d0ad200a7ee7dc532eaeaa571b7884455b237a23745c9cadb1ca784a097f2319ccb8d7556bc2928296af314fb1888
   languageName: node
   linkType: hard
 
-"@mantine/store@npm:9.7.0":
-  version: 9.7.0
-  resolution: "@mantine/store@npm:9.7.0"
+"@mantine/store@npm:9.7.1":
+  version: 9.7.1
+  resolution: "@mantine/store@npm:9.7.1"
   peerDependencies:
     react: ^19.2.0
-  checksum: 10c0/818b08df4de3f02c5854d856ef8092ce4e4d594eab3b2cd9443cddb814633aea74afc8dc456814a4a485306cdbee705dd49fb9d8d9df2db38df30e944a459964
+  checksum: 10c0/9c2691092427cd339c8fb5aaf5107ecb4f9438d6dd4caab627d9f0eff070843b31825e4b9c541fe771717ae33c210723b0806dfd46ff9120324cec181ff37c07
   languageName: node
   linkType: hard
 
@@ -4567,21 +4567,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tabler/icons-react@npm:^3.48.0":
-  version: 3.48.0
-  resolution: "@tabler/icons-react@npm:3.48.0"
+"@tabler/icons-react@npm:^3.49.0":
+  version: 3.49.0
+  resolution: "@tabler/icons-react@npm:3.49.0"
   dependencies:
-    "@tabler/icons": "npm:3.48.0"
+    "@tabler/icons": "npm:3.49.0"
   peerDependencies:
     react: ">= 16"
-  checksum: 10c0/49c314159da3d19cbb4e4791928a4edd78a02805ac262702b0a177fccbf2b8f3b7ace1ca81e1df873237ef86266dce5bf5547758803e83d24d5887af99716240
+  checksum: 10c0/4c50b4f9ff56f6755161896ba4e5271dc97caf4132394e443162bff015e0fc72c109b53bc31436d4350fa2c836a472b304e5761b2a121c18c03f157966ba8025
   languageName: node
   linkType: hard
 
-"@tabler/icons@npm:3.48.0":
-  version: 3.48.0
-  resolution: "@tabler/icons@npm:3.48.0"
-  checksum: 10c0/52c4e582dede13508c6cf34b73c23f80449dde042ee487cb2ef082e92b50cb644f61072871a95f6a0ebb11b117d7f10581455906bb74ed0fa0a9924170876e80
+"@tabler/icons@npm:3.49.0":
+  version: 3.49.0
+  resolution: "@tabler/icons@npm:3.49.0"
+  checksum: 10c0/8540c7182c67efcd7209d0ab2de75dd413eff0f61c5906d0e1b20bc53ef4eaadcd13e301e2e5829dac47ee710bc0d8301d99c1dd0aada683a87addb32742d34a
   languageName: node
   linkType: hard
 
@@ -5430,94 +5430,94 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@yuku-analyzer/binding-android-arm64@npm:0.10.2":
-  version: 0.10.2
-  resolution: "@yuku-analyzer/binding-android-arm64@npm:0.10.2"
+"@yuku-core/binding-android-arm64@npm:0.17.0":
+  version: 0.17.0
+  resolution: "@yuku-core/binding-android-arm64@npm:0.17.0"
   conditions: os=android & cpu=arm64
   languageName: node
   linkType: hard
 
-"@yuku-analyzer/binding-darwin-arm64@npm:0.10.2":
-  version: 0.10.2
-  resolution: "@yuku-analyzer/binding-darwin-arm64@npm:0.10.2"
+"@yuku-core/binding-darwin-arm64@npm:0.17.0":
+  version: 0.17.0
+  resolution: "@yuku-core/binding-darwin-arm64@npm:0.17.0"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@yuku-analyzer/binding-darwin-x64@npm:0.10.2":
-  version: 0.10.2
-  resolution: "@yuku-analyzer/binding-darwin-x64@npm:0.10.2"
+"@yuku-core/binding-darwin-x64@npm:0.17.0":
+  version: 0.17.0
+  resolution: "@yuku-core/binding-darwin-x64@npm:0.17.0"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@yuku-analyzer/binding-freebsd-x64@npm:0.10.2":
-  version: 0.10.2
-  resolution: "@yuku-analyzer/binding-freebsd-x64@npm:0.10.2"
+"@yuku-core/binding-freebsd-x64@npm:0.17.0":
+  version: 0.17.0
+  resolution: "@yuku-core/binding-freebsd-x64@npm:0.17.0"
   conditions: os=freebsd & cpu=x64
   languageName: node
   linkType: hard
 
-"@yuku-analyzer/binding-linux-arm-gnu@npm:0.10.2":
-  version: 0.10.2
-  resolution: "@yuku-analyzer/binding-linux-arm-gnu@npm:0.10.2"
+"@yuku-core/binding-linux-arm-gnu@npm:0.17.0":
+  version: 0.17.0
+  resolution: "@yuku-core/binding-linux-arm-gnu@npm:0.17.0"
   conditions: os=linux & cpu=arm & libc=glibc
   languageName: node
   linkType: hard
 
-"@yuku-analyzer/binding-linux-arm-musl@npm:0.10.2":
-  version: 0.10.2
-  resolution: "@yuku-analyzer/binding-linux-arm-musl@npm:0.10.2"
+"@yuku-core/binding-linux-arm-musl@npm:0.17.0":
+  version: 0.17.0
+  resolution: "@yuku-core/binding-linux-arm-musl@npm:0.17.0"
   conditions: os=linux & cpu=arm & libc=musl
   languageName: node
   linkType: hard
 
-"@yuku-analyzer/binding-linux-arm64-gnu@npm:0.10.2":
-  version: 0.10.2
-  resolution: "@yuku-analyzer/binding-linux-arm64-gnu@npm:0.10.2"
+"@yuku-core/binding-linux-arm64-gnu@npm:0.17.0":
+  version: 0.17.0
+  resolution: "@yuku-core/binding-linux-arm64-gnu@npm:0.17.0"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@yuku-analyzer/binding-linux-arm64-musl@npm:0.10.2":
-  version: 0.10.2
-  resolution: "@yuku-analyzer/binding-linux-arm64-musl@npm:0.10.2"
+"@yuku-core/binding-linux-arm64-musl@npm:0.17.0":
+  version: 0.17.0
+  resolution: "@yuku-core/binding-linux-arm64-musl@npm:0.17.0"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@yuku-analyzer/binding-linux-x64-gnu@npm:0.10.2":
-  version: 0.10.2
-  resolution: "@yuku-analyzer/binding-linux-x64-gnu@npm:0.10.2"
+"@yuku-core/binding-linux-x64-gnu@npm:0.17.0":
+  version: 0.17.0
+  resolution: "@yuku-core/binding-linux-x64-gnu@npm:0.17.0"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@yuku-analyzer/binding-linux-x64-musl@npm:0.10.2":
-  version: 0.10.2
-  resolution: "@yuku-analyzer/binding-linux-x64-musl@npm:0.10.2"
+"@yuku-core/binding-linux-x64-musl@npm:0.17.0":
+  version: 0.17.0
+  resolution: "@yuku-core/binding-linux-x64-musl@npm:0.17.0"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@yuku-analyzer/binding-win32-arm64@npm:0.10.2":
-  version: 0.10.2
-  resolution: "@yuku-analyzer/binding-win32-arm64@npm:0.10.2"
+"@yuku-core/binding-win32-arm64@npm:0.17.0":
+  version: 0.17.0
+  resolution: "@yuku-core/binding-win32-arm64@npm:0.17.0"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@yuku-analyzer/binding-win32-x64@npm:0.10.2":
-  version: 0.10.2
-  resolution: "@yuku-analyzer/binding-win32-x64@npm:0.10.2"
+"@yuku-core/binding-win32-x64@npm:0.17.0":
+  version: 0.17.0
+  resolution: "@yuku-core/binding-win32-x64@npm:0.17.0"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@yuku-toolchain/types@npm:^0.10.2":
-  version: 0.10.2
-  resolution: "@yuku-toolchain/types@npm:0.10.2"
-  checksum: 10c0/a56b8b1b69d84287c0ffc4ba9fb69bd306b419fb835c42057bd95d80b0c68e1a28ed95db0238393251e48ed7e93d479b1f71aa20a248cfb1e80211466f6374c0
+"@yuku-toolchain/types@npm:^0.17.0":
+  version: 0.17.0
+  resolution: "@yuku-toolchain/types@npm:0.17.0"
+  checksum: 10c0/6e77fce2290ef1a5bf9209dfe6ba391ac6cd7719ee5750e6fb4670a52cab94f276f643dedbe938327e18163ccf840de146780fc210cbdef8f4bb3affd1855787
   languageName: node
   linkType: hard
 
@@ -8408,17 +8408,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fumadocs-core@npm:16.16.1":
-  version: 16.16.1
-  resolution: "fumadocs-core@npm:16.16.1"
+"fumadocs-core@npm:16.17.1":
+  version: 16.17.1
+  resolution: "fumadocs-core@npm:16.17.1"
   dependencies:
     "@fumari/image-size": "npm:^0.1.1"
     estree-util-value-to-estree: "npm:^3.5.0"
     github-slugger: "npm:^2.0.0"
+    hast-util-from-dom: "npm:^5.0.1"
     hast-util-to-estree: "npm:^3.1.3"
     hast-util-to-jsx-runtime: "npm:^2.3.6"
     mdast-util-mdx: "npm:^3.0.0"
-    mdast-util-to-markdown: "npm:^2.1.3"
+    micromark: "npm:^4.0.2"
+    micromark-extension-gfm-table: "npm:^2.1.2"
     npm-to-yarn: "npm:3.2.0"
     remark: "npm:^15.0.1"
     remark-gfm: "npm:^4.0.1"
@@ -8427,7 +8429,6 @@ __metadata:
     shiki: "npm:^4.5.0"
     tinyglobby: "npm:^0.2.17"
     unified: "npm:^11.0.5"
-    unist-util-visit: "npm:^5.1.0"
     vfile: "npm:^6.0.3"
     yaml: "npm:^2.9.1"
     zbsearch: "npm:^4.0.1"
@@ -8493,13 +8494,13 @@ __metadata:
       optional: true
     zod:
       optional: true
-  checksum: 10c0/6d9a694d84ff4649353a1aa1f563bbc2d8dedbfedf238c91172e731cb059581a630daec3eb4f411fab93640eb3fc1e054e5b76faec6f46d31a2296a70f1b59c6
+  checksum: 10c0/9115bdfb6999e4d2eb00fba55faa55cf3cf3ad0d3572cff1c76b2e4b948946625a9708886947ffddaf03adf3f1e6762250bbf6517bbd527372bc8d91a19256bc
   languageName: node
   linkType: hard
 
-"fumadocs-mdx@npm:15.4.6":
-  version: 15.4.6
-  resolution: "fumadocs-mdx@npm:15.4.6"
+"fumadocs-mdx@npm:15.4.7":
+  version: 15.4.7
+  resolution: "fumadocs-mdx@npm:15.4.7"
   dependencies:
     "@mdx-js/mdx": "npm:^3.1.1"
     "@standard-schema/spec": "npm:^1.1.0"
@@ -8507,7 +8508,7 @@ __metadata:
     esbuild: "npm:^0.28.2"
     estree-util-value-to-estree: "npm:^3.5.0"
     github-slugger: "npm:^2.0.0"
-    magic-string: "npm:^1.4.1"
+    magic-string: "npm:^1.4.2"
     mdast-util-mdx: "npm:^3.0.0"
     picocolors: "npm:^1.1.1"
     picomatch: "npm:^4.0.7"
@@ -8515,17 +8516,16 @@ __metadata:
     tinyglobby: "npm:^0.2.17"
     unified: "npm:^11.0.5"
     unist-util-remove-position: "npm:^5.0.0"
-    unist-util-visit: "npm:^5.1.0"
     vfile: "npm:^6.0.3"
     yaml: "npm:^2.9.1"
-    yuku-analyzer: "npm:^0.10.2"
+    yuku-analyzer: "npm:^0.17.0"
     zod: "npm:^4.6.5"
   peerDependencies:
     "@fumadocs/satteri": 0.x.x
     "@types/mdast": "*"
     "@types/mdx": "*"
     "@types/react": "*"
-    fumadocs-core: ^16.15.3
+    fumadocs-core: ^16.17.0
     mdast-util-directive: "*"
     next: ^15.3.0 || ^16.0.0
     react: ^19.2.0
@@ -8555,7 +8555,7 @@ __metadata:
       optional: true
   bin:
     fumadocs-mdx: ./bin.js
-  checksum: 10c0/1c14283aa67a97d8431473ba9392bec26a0101e329546795c3b0e5b03b77cce83e71213100339459cc4a5acf9988e272561cea2370773d4488b115fc8494f73a
+  checksum: 10c0/3c610845add3f253e629df505595a8d309f64d87cb2ae2210beecffded2dec0e70ac8446295337204b0b37524de95a7e752e5bf126dd97b51fdb99f526edacbc
   languageName: node
   linkType: hard
 
@@ -8919,6 +8919,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hast-util-from-dom@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "hast-util-from-dom@npm:5.0.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    hastscript: "npm:^9.0.0"
+    web-namespaces: "npm:^2.0.0"
+  checksum: 10c0/9a90381e048107a093a3da758bb17b67aaf5322e222f02497f841c4990abf94aa177d38d5b9bf61ad07b3601d0409f34f5b556d89578cc189230c6b994d2af77
+  languageName: node
+  linkType: hard
+
+"hast-util-parse-selector@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "hast-util-parse-selector@npm:4.0.0"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+  checksum: 10c0/5e98168cb44470dc274aabf1a28317e4feb09b1eaf7a48bbaa8c1de1b43a89cd195cb1284e535698e658e3ec26ad91bc5e52c9563c36feb75abbc68aaf68fb9f
+  languageName: node
+  linkType: hard
+
 "hast-util-to-estree@npm:^3.0.0":
   version: 3.1.1
   resolution: "hast-util-to-estree@npm:3.1.1"
@@ -9038,6 +9058,19 @@ __metadata:
   dependencies:
     "@types/hast": "npm:^3.0.0"
   checksum: 10c0/b898bc9fe27884b272580d15260b6bbdabe239973a147e97fa98c45fa0ffec967a481aaa42291ec34fb56530dc2d484d473d7e2bae79f39c83f3762307edfea8
+  languageName: node
+  linkType: hard
+
+"hastscript@npm:^9.0.0":
+  version: 9.0.1
+  resolution: "hastscript@npm:9.0.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    comma-separated-tokens: "npm:^2.0.0"
+    hast-util-parse-selector: "npm:^4.0.0"
+    property-information: "npm:^7.0.0"
+    space-separated-tokens: "npm:^2.0.0"
+  checksum: 10c0/18dc8064e5c3a7a2ae862978e626b97a254e1c8a67ee9d0c9f06d373bba155ed805fc5b5ce21b990fb7bc174624889e5e1ce1cade264f1b1d58b48f994bc85ce
   languageName: node
   linkType: hard
 
@@ -10551,12 +10584,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"magic-string@npm:^1.4.1":
-  version: 1.4.2
-  resolution: "magic-string@npm:1.4.2"
+"magic-string@npm:^1.4.2":
+  version: 1.4.3
+  resolution: "magic-string@npm:1.4.3"
   dependencies:
     "@jridgewell/sourcemap-codec": "npm:^1.6.0"
-  checksum: 10c0/d3e222c202f99ec4861e7316f473f9b1cfe335ebdf38d4f67335f842f3fe248f01ee00fd3e1a8206bcbe9855e0c41515d7c210300d8fcf6eefbb982d79e423c6
+  checksum: 10c0/857743a1e7039d2e867505bb272a57cc605f610b90f6bf9ef6cbf9654e9cd64330ec35e564a58ca455350529872c3ecc01f37da934da130391237f9f593cc565
   languageName: node
   linkType: hard
 
@@ -10602,17 +10635,17 @@ __metadata:
   resolution: "mantine-next-fumadocs-template@workspace:."
   dependencies:
     "@babel/core": "npm:^7.29.7"
-    "@gfazioli/mantine-border-animate": "npm:^3.0.4"
+    "@gfazioli/mantine-border-animate": "npm:^3.0.5"
     "@gfazioli/mantine-marquee": "npm:^4.1.8"
-    "@gfazioli/mantine-text-animate": "npm:^4.0.14"
-    "@mantine/core": "npm:9.7.0"
-    "@mantine/hooks": "npm:9.7.0"
-    "@mantine/spotlight": "npm:9.7.0"
+    "@gfazioli/mantine-text-animate": "npm:^4.0.15"
+    "@mantine/core": "npm:9.7.1"
+    "@mantine/hooks": "npm:9.7.1"
+    "@mantine/spotlight": "npm:9.7.1"
     "@next/bundle-analyzer": "npm:^16.3.7"
     "@storybook/addon-themes": "npm:^10.6.1"
     "@storybook/nextjs": "npm:^10.6.1"
     "@storybook/react": "npm:^10.6.1"
-    "@tabler/icons-react": "npm:^3.48.0"
+    "@tabler/icons-react": "npm:^3.49.0"
     "@testing-library/dom": "npm:^10.4.2"
     "@testing-library/jest-dom": "npm:^6.10.0"
     "@testing-library/react": "npm:^16.3.3"
@@ -10623,11 +10656,11 @@ __metadata:
     "@types/react": "npm:19.3.0"
     "@vercel/analytics": "npm:^1.6.1"
     babel-loader: "npm:^10.1.1"
-    fumadocs-core: "npm:16.16.1"
-    fumadocs-mdx: "npm:15.4.6"
+    fumadocs-core: "npm:16.17.1"
+    fumadocs-mdx: "npm:15.4.7"
     jest: "npm:^30.5.2"
     jest-environment-jsdom: "npm:^30.5.2"
-    marked: "npm:^18.0.14"
+    marked: "npm:^18.1.0"
     next: "npm:16.3.7"
     oxfmt: "npm:^0.72.0"
     oxlint: "npm:^1.87.0"
@@ -10661,12 +10694,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"marked@npm:^18.0.14":
-  version: 18.0.14
-  resolution: "marked@npm:18.0.14"
+"marked@npm:^18.1.0":
+  version: 18.1.0
+  resolution: "marked@npm:18.1.0"
   bin:
     marked: bin/marked.js
-  checksum: 10c0/1214c7553fdcb1db6c5adad29a7d019f9350f861bc9783ed41a2d177f021551fb22884de012ea26be446af8650d8abbf76d822b9ad5b0c5d592628f66663c42e
+  checksum: 10c0/6022a30a15d25fe0eb2958f84ebb45518290e512b61afbf9a0b9452297b30cb5f1af8289fc0057a83fa8232e6115d902d85546aba5036063a97f93be88f4df70
   languageName: node
   linkType: hard
 
@@ -10909,25 +10942,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mdast-util-to-markdown@npm:^2.1.3":
-  version: 2.2.0
-  resolution: "mdast-util-to-markdown@npm:2.2.0"
-  dependencies:
-    "@types/mdast": "npm:^4.0.0"
-    "@types/unist": "npm:^3.0.0"
-    longest-streak: "npm:^3.0.0"
-    mdast-util-phrasing: "npm:^4.0.0"
-    mdast-util-to-string: "npm:^4.0.0"
-    micromark-util-character: "npm:^2.0.0"
-    micromark-util-classify-character: "npm:^2.0.0"
-    micromark-util-decode-string: "npm:^2.0.0"
-    micromark-util-html-tag-name: "npm:^2.0.0"
-    unist-util-visit: "npm:^5.0.0"
-    zwitch: "npm:^2.0.0"
-  checksum: 10c0/584ad697cc2e94f5a276f732d66125024a8b9ea57f9b6dcc67bc09be8414fa82bb96b790c6aff0b18b4c7e88df36ab83f781429460c2b8cc0559260d6c63358c
-  languageName: node
-  linkType: hard
-
 "mdast-util-to-string@npm:^4.0.0":
   version: 4.0.0
   resolution: "mdast-util-to-string@npm:4.0.0"
@@ -11064,6 +11078,19 @@ __metadata:
     micromark-util-symbol: "npm:^2.0.0"
     micromark-util-types: "npm:^2.0.0"
   checksum: 10c0/04bc00e19b435fa0add62cd029d8b7eb6137522f77832186b1d5ef34544a9bd030c9cf85e92ddfcc5c31f6f0a58a43d4b96dba4fc21316037c734630ee12c912
+  languageName: node
+  linkType: hard
+
+"micromark-extension-gfm-table@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "micromark-extension-gfm-table@npm:2.1.2"
+  dependencies:
+    devlop: "npm:^1.0.0"
+    micromark-factory-space: "npm:^2.0.0"
+    micromark-util-character: "npm:^2.0.0"
+    micromark-util-symbol: "npm:^2.0.0"
+    micromark-util-types: "npm:^2.0.0"
+  checksum: 10c0/cb373e2a1df6700a884b3fc85bdf47fee1dd06664e72cf866dd1e5828f017517cbc3e3a58b9256d6b5c5a21b067151806afbf780188c47d2fc027004ea3ab07c
   languageName: node
   linkType: hard
 
@@ -11317,6 +11344,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"micromark-util-edit-map@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "micromark-util-edit-map@npm:1.0.0"
+  dependencies:
+    micromark-util-types: "npm:^2.0.0"
+  checksum: 10c0/5f6caaa4d8a3c5b95632c8ab66ffaa488d496583ba37bbf7f5f7dd5c7bc3a5c51af97bc5767aa92c6aa906c5c031f0b09a5239284a6d0f1707d4f953bb7d8e4e
+  languageName: node
+  linkType: hard
+
 "micromark-util-encode@npm:^2.0.0":
   version: 2.0.1
   resolution: "micromark-util-encode@npm:2.0.1"
@@ -11424,6 +11460,32 @@ __metadata:
     micromark-util-symbol: "npm:^2.0.0"
     micromark-util-types: "npm:^2.0.0"
   checksum: 10c0/b5d950c84664ce209575e5a54946488f0a1e1240d080544e657b65074c9b08208a5315d9db066b93cbc199ec05f68552ba8b09fd5e716c726f4a4712275a7c5c
+  languageName: node
+  linkType: hard
+
+"micromark@npm:^4.0.2":
+  version: 4.0.3
+  resolution: "micromark@npm:4.0.3"
+  dependencies:
+    "@types/debug": "npm:^4.0.0"
+    debug: "npm:^4.0.0"
+    decode-named-character-reference: "npm:^1.0.0"
+    devlop: "npm:^1.0.0"
+    micromark-core-commonmark: "npm:^2.0.0"
+    micromark-factory-space: "npm:^2.0.0"
+    micromark-util-character: "npm:^2.0.0"
+    micromark-util-chunked: "npm:^2.0.0"
+    micromark-util-combine-extensions: "npm:^2.0.0"
+    micromark-util-decode-numeric-character-reference: "npm:^2.0.0"
+    micromark-util-edit-map: "npm:^1.0.0"
+    micromark-util-encode: "npm:^2.0.0"
+    micromark-util-normalize-identifier: "npm:^2.0.0"
+    micromark-util-resolve-all: "npm:^2.0.0"
+    micromark-util-sanitize-uri: "npm:^2.0.0"
+    micromark-util-subtokenize: "npm:^2.0.0"
+    micromark-util-symbol: "npm:^2.0.0"
+    micromark-util-types: "npm:^2.0.0"
+  checksum: 10c0/f1710d5c255e3d20127127223263aee539a04c3ca7423019d18f668656cd82eb9282362cf281cac31b7e9b282d04e297c17bf3e302201e2621ed32af24e69ba9
   languageName: node
   linkType: hard
 
@@ -15408,17 +15470,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unist-util-visit@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "unist-util-visit@npm:5.1.0"
-  dependencies:
-    "@types/unist": "npm:^3.0.0"
-    unist-util-is: "npm:^6.0.0"
-    unist-util-visit-parents: "npm:^6.0.0"
-  checksum: 10c0/a56e1bbbf63fcb55abe379e660b9a3367787e8be1e2473bdb7e86cfa6f32b6c1fa0092432d7040b8a30b2fc674bbbe024ffe6d03c3d6bf4839b064f584463a4e
-  languageName: node
-  linkType: hard
-
 "universalify@npm:^2.0.0":
   version: 2.0.0
   resolution: "universalify@npm:2.0.0"
@@ -15669,6 +15720,13 @@ __metadata:
   dependencies:
     graceful-fs: "npm:^4.1.2"
   checksum: 10c0/8290e89f03e1e7136e1ef9b8d04bd03822963fa4b442781a40999e7b9ba29ab333a7a5285312b2d4f3e91bc8c5c526cf1f91f5ce0e857dafe56db28ab1c17dca
+  languageName: node
+  linkType: hard
+
+"web-namespaces@npm:^2.0.0":
+  version: 2.0.1
+  resolution: "web-namespaces@npm:2.0.1"
+  checksum: 10c0/df245f466ad83bd5cd80bfffc1674c7f64b7b84d1de0e4d2c0934fb0782e0a599164e7197a4bce310ee3342fd61817b8047ff04f076a1ce12dd470584142a4bd
   languageName: node
   linkType: hard
 
@@ -16037,59 +16095,69 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yuku-analyzer@npm:^0.10.2":
-  version: 0.10.2
-  resolution: "yuku-analyzer@npm:0.10.2"
+"yuku-analyzer@npm:^0.17.0":
+  version: 0.17.0
+  resolution: "yuku-analyzer@npm:0.17.0"
   dependencies:
-    "@yuku-analyzer/binding-android-arm64": "npm:0.10.2"
-    "@yuku-analyzer/binding-darwin-arm64": "npm:0.10.2"
-    "@yuku-analyzer/binding-darwin-x64": "npm:0.10.2"
-    "@yuku-analyzer/binding-freebsd-x64": "npm:0.10.2"
-    "@yuku-analyzer/binding-linux-arm-gnu": "npm:0.10.2"
-    "@yuku-analyzer/binding-linux-arm-musl": "npm:0.10.2"
-    "@yuku-analyzer/binding-linux-arm64-gnu": "npm:0.10.2"
-    "@yuku-analyzer/binding-linux-arm64-musl": "npm:0.10.2"
-    "@yuku-analyzer/binding-linux-x64-gnu": "npm:0.10.2"
-    "@yuku-analyzer/binding-linux-x64-musl": "npm:0.10.2"
-    "@yuku-analyzer/binding-win32-arm64": "npm:0.10.2"
-    "@yuku-analyzer/binding-win32-x64": "npm:0.10.2"
-    "@yuku-toolchain/types": "npm:^0.10.2"
-    yuku-ast: "npm:^0.10.2"
-  dependenciesMeta:
-    "@yuku-analyzer/binding-android-arm64":
-      optional: true
-    "@yuku-analyzer/binding-darwin-arm64":
-      optional: true
-    "@yuku-analyzer/binding-darwin-x64":
-      optional: true
-    "@yuku-analyzer/binding-freebsd-x64":
-      optional: true
-    "@yuku-analyzer/binding-linux-arm-gnu":
-      optional: true
-    "@yuku-analyzer/binding-linux-arm-musl":
-      optional: true
-    "@yuku-analyzer/binding-linux-arm64-gnu":
-      optional: true
-    "@yuku-analyzer/binding-linux-arm64-musl":
-      optional: true
-    "@yuku-analyzer/binding-linux-x64-gnu":
-      optional: true
-    "@yuku-analyzer/binding-linux-x64-musl":
-      optional: true
-    "@yuku-analyzer/binding-win32-arm64":
-      optional: true
-    "@yuku-analyzer/binding-win32-x64":
-      optional: true
-  checksum: 10c0/ac80a5c37f908c28fa1de0ebb6d7c8a247a527c3db483e77edaeb3284abc3b43a123c8d8d9b1503150ff0564d3e7f066970ed9f290ffcb3e99955c99a203e488
+    "@yuku-toolchain/types": "npm:^0.17.0"
+    yuku-ast: "npm:^0.17.0"
+    yuku-core: "npm:0.17.0"
+  checksum: 10c0/c32e784a9d3c4ba83dc497c6958e8ce3751aae07885e0487c45ec2d5a3caf92ae195e34b3f30e49ce9e29a18edcd7c18b5336ab47fae858ea04e51785514fb39
   languageName: node
   linkType: hard
 
-"yuku-ast@npm:^0.10.2":
-  version: 0.10.2
-  resolution: "yuku-ast@npm:0.10.2"
+"yuku-ast@npm:^0.17.0":
+  version: 0.17.0
+  resolution: "yuku-ast@npm:0.17.0"
   dependencies:
-    "@yuku-toolchain/types": "npm:^0.10.2"
-  checksum: 10c0/ecaaf37d5c7436f3eeade5ac68e50aaded476387008e8ef9643da8d3369c0d824de028c44d73b2d8ed3ccf5adafae770bbac5d0dec63c8e7b3957b784b45530d
+    "@yuku-toolchain/types": "npm:^0.17.0"
+  checksum: 10c0/93ab07221530a0ae99a253eaa83ac2eda9b6d1a55dd82abb2a089aa5eba585c55bb084396380a590ce4c2e8a467aa4cc2e7b27277cdb8d21be865d2d7bfdbdb2
+  languageName: node
+  linkType: hard
+
+"yuku-core@npm:0.17.0":
+  version: 0.17.0
+  resolution: "yuku-core@npm:0.17.0"
+  dependencies:
+    "@yuku-core/binding-android-arm64": "npm:0.17.0"
+    "@yuku-core/binding-darwin-arm64": "npm:0.17.0"
+    "@yuku-core/binding-darwin-x64": "npm:0.17.0"
+    "@yuku-core/binding-freebsd-x64": "npm:0.17.0"
+    "@yuku-core/binding-linux-arm-gnu": "npm:0.17.0"
+    "@yuku-core/binding-linux-arm-musl": "npm:0.17.0"
+    "@yuku-core/binding-linux-arm64-gnu": "npm:0.17.0"
+    "@yuku-core/binding-linux-arm64-musl": "npm:0.17.0"
+    "@yuku-core/binding-linux-x64-gnu": "npm:0.17.0"
+    "@yuku-core/binding-linux-x64-musl": "npm:0.17.0"
+    "@yuku-core/binding-win32-arm64": "npm:0.17.0"
+    "@yuku-core/binding-win32-x64": "npm:0.17.0"
+    "@yuku-toolchain/types": "npm:^0.17.0"
+  dependenciesMeta:
+    "@yuku-core/binding-android-arm64":
+      optional: true
+    "@yuku-core/binding-darwin-arm64":
+      optional: true
+    "@yuku-core/binding-darwin-x64":
+      optional: true
+    "@yuku-core/binding-freebsd-x64":
+      optional: true
+    "@yuku-core/binding-linux-arm-gnu":
+      optional: true
+    "@yuku-core/binding-linux-arm-musl":
+      optional: true
+    "@yuku-core/binding-linux-arm64-gnu":
+      optional: true
+    "@yuku-core/binding-linux-arm64-musl":
+      optional: true
+    "@yuku-core/binding-linux-x64-gnu":
+      optional: true
+    "@yuku-core/binding-linux-x64-musl":
+      optional: true
+    "@yuku-core/binding-win32-arm64":
+      optional: true
+    "@yuku-core/binding-win32-x64":
+      optional: true
+  checksum: 10c0/bf52c0eb29a48f19bd93bce047e376e58494128ebcb42e46470f3b52d2dc1ed4b66dc904fe620c8ae4f308bd4a2ab3af68b36026db137c393d641c3663451f14
   languageName: node
   linkType: hard
 
