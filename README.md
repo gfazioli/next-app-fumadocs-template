@@ -6,6 +6,11 @@
 
 </div>
 
+<div align="center">
+  <p><img src="https://raw.githubusercontent.com/gfazioli/gfazioli/master/glancecard/next-app-fumadocs-template.svg" width="880" alt="next-app-fumadocs-template at a glance, refreshed daily: commits, releases, stars, issues and pull requests, a year of commit activity, the weekly rhythm, languages, latest commits and releases, contributors" /><br>
+  <sub>Made with <a href="https://github.com/gfazioli/glancecard">glancecard</a> · refreshed daily</sub></p>
+</div>
+
 This is a template for a [Next.js](https://nextjs.org/) App Router + [Mantine](https://mantine.dev/) + [Fumadocs](https://www.fumadocs.dev/) documentation site.
 
 The docs UI is built **100% with Mantine** on top of the headless `fumadocs-core` — no Tailwind, no third-party docs theme, a single styling system for the whole app. Change `primaryColor` in `theme.ts` and the entire docs UI follows.
