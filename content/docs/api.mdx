@@ -1,58 +1,74 @@
 ---
 title: API
-description: "Built-in API routes: search, GitHub releases and version"
+description: "Built-in API routes: search, GitHub releases and version, on a server deployment and in a static export"
 ---
 
-This starter kit provides a simple API for managing the state of the application. The API is designed to be easy to use and understand, while also being powerful enough to handle complex use cases.
+The template ships three read-only `GET` routes, all in the `app/api` folder:
 
-> [!TIP]
->
-> You can find all the API routes in the `app/api` folder. The API is built using [Next.js](https://nextjs.org/) and is designed to be easy to use and understand.
+| Route                  | Returns                                                        |
+| ---------------------- | -------------------------------------------------------------- |
+| `/api/search`          | Search results from the docs, through Orama                     |
+| `/api/github-releases` | The latest releases of the repository set in `config/index.ts` |
+| `/api/version`         | The app's version, read from `package.json`                    |
+
+Each one works in both deploy modes, but answers differently in a static export (see [Static export](#static-export) below).
 
 ## Search API
 
 The full-text search is powered by [Orama](https://oramasearch.com/) through
-`fumadocs-core/search/server`: at startup the route builds an in-memory index from the
-docs content source — no separate indexing step, no extra build command.
-
-The whole route is two lines:
+`fumadocs-core/search/server`: the route builds the index from the docs content source
+itself, with no separate indexing step and no extra build command.
 
 ```ts title="app/api/search/route.ts"
-export const { GET } = createFromSource(source, {
+const server = createFromSource(source, {
   language: config.search.language,
 });
+
+export const GET = process.env.NEXT_PUBLIC_STATIC_EXPORT === '1' ? server.staticGET : server.GET;
 ```
 
-You can try it with [a search for “mantine”](/api/search?query=mantine)
+### On a server deployment
 
-### Default route
+The index stays on the server and the route answers queries: try `/api/search?query=mantine`. It returns an array of entries, one for each page, heading or paragraph that matches:
 
-The default URL is exposed at `https://your-site.com/api/search?query=...`.
+```json
+[
+  {
+    "id": "/docs/mantine",
+    "type": "page",
+    "content": "Mantine",
+    "breadcrumbs": ["Documentation", "Examples"],
+    "url": "/docs/mantine"
+  },
+  {
+    "id": "/docs/mantine-6",
+    "type": "text",
+    "content": "Mantine Marquee",
+    "url": "/docs/mantine#third-party-components"
+  }
+]
+```
+
+`type` is `page`, `heading` or `text`, and `url` links straight to the page or the section. Without a `query`, the route returns an empty array.
 
 ### Client side
 
 The search UI is a [Mantine Spotlight](https://mantine.dev/x/spotlight/) fed by the
-headless `useDocsSearch` hook — open it with `⌘K` (or `/`). See
-`components/docs/DocsSearch.tsx`.
+headless `useDocsSearch` hook: open it with `⌘K` (or `/`). It queries the route on a server
+deployment, and downloads the static index in a static export:
 
 ```tsx title="components/docs/DocsSearch.tsx"
-const { search, setSearch, query } = useDocsSearch({ type: 'fetch' });
+const { search, setSearch, query } = useDocsSearch(
+  isStaticExport ? { type: 'static', from: `${basePath}/api/search` } : { type: 'fetch' }
+);
 ```
 
-### Static export
-
-If you deploy as a fully static site (`output: 'export'`), switch the route to
-`staticGET` and the client hook to `type: 'static'` — the index is then exported as a
-static file and queried in the browser:
-
-```ts title="app/api/search/route.ts"
-export const { staticGET: GET } = createFromSource(source);
-export const revalidate = false;
-```
+The filter row above the results (All, Guides, Examples, Reference) comes from
+`config.search.filters`.
 
 ### Config
 
-The search language can be changed in the `config/index.ts` file:
+The search language and the filters live in the `config/index.ts` file:
 
 ```ts title="config/index.ts"
   /**
@@ -61,22 +77,53 @@ The search language can be changed in the `config/index.ts` file:
    */
   search: {
     language: 'english',
+    filters: [
+      { label: 'All', prefixes: [] as string[] },
+      { label: 'Guides', prefixes: ['/docs/guides'] },
+      { label: 'Examples', prefixes: ['/docs/mantine', '/docs/inline-svg'] },
+      { label: 'Reference', prefixes: ['/docs/api', '/docs/versioning'] },
+    ],
   },
 ```
 
 ## GitHub Release API
 
-The GitHub Release API is a simple API that allows you to get the latest release of a GitHub repository. It is designed to be easy to use and understand, while also being powerful enough to handle complex use cases.
+On a server deployment, `/api/github-releases` proxies the GitHub REST API and returns the
+latest releases of the repository set in `config/index.ts`: as many as
+`releaseNotes.maxReleases`, 10 by default. The [Release Notes](/docs/release-notes) page is
+built on it.
 
-Have a look at the [Release Notes](/docs/release-notes) page to see it in action.
+### Response
 
-### Default route
+```json
+{
+  "releases": [],
+  "status": "ok"
+}
+```
 
-The default URL is exposed at `https://your-site.com/api/github-releases`.
+`releases` holds GitHub's own release objects, newest first (`tag_name`, `name`, `body`,
+`published_at`, `html_url` and the rest), exactly as GitHub's
+[List releases](https://docs.github.com/en/rest/releases/releases#list-releases) endpoint
+returns them.
+
+### Refused requests and errors
+
+| Case                                                                          | Status       | Body                                                   |
+| ----------------------------------------------------------------------------- | ------------ | ------------------------------------------------------ |
+| No `User-Agent` header                                                        | 400          | `{ "error": "User agent not found" }`                  |
+| A `User-Agent` that looks like a crawler (`bot`, `crawl`, `slurp`, `spider`) | 403          | `{ "error": "Bots are not allowed" }`                  |
+| GitHub answers with an error                                                  | GitHub's own | `{ "error": "<GitHub's status text>" }`                |
+| Anything else goes wrong                                                      | 500          | `{ "error": "Internal server error", "details": "…" }` |
+
+### Caching
+
+The call to GitHub is cached for an hour (`next: { revalidate: 3600 }`), and the route
+answers with `Cache-Control: public, s-maxage=3600, stale-while-revalidate=86400`: a CDN
+such as Vercel's serves the same response for an hour, and a stale one for up to a day
+while it refreshes.
 
 ### Config
-
-You may configure the API in the `config/index.ts` file:
 
 ```ts title="config/index.ts"
   /**
@@ -84,7 +131,8 @@ You may configure the API in the `config/index.ts` file:
    * @see https://docs.github.com/en/rest/reference/repos#releases
    *
    * The GitHub API token is optional for rate limiting.
-   * If you want to use it, create a personal access token with the `repo` scope.
+   * If you want to use it, create a read-only token: a fine-grained token with
+   * public repositories (read-only), or a classic token with no scopes.
    *
    * This information is used to fetch the releases from the GitHub API.
    */
@@ -104,29 +152,48 @@ You may configure the API in the `config/index.ts` file:
   },
 ```
 
-### Rate limiting
+`repo` is also sent to GitHub as the request's `User-Agent`, which GitHub requires.
 
-The GitHub API has a rate limit of 60 requests per hour for unauthenticated requests. If you want to increase the rate limit, you can create a personal access token with the `repo` scope and add it to the `GITHUB_TOKEN` environment variable.
+### Rate limiting and `GITHUB_TOKEN`
 
-You have to update `app/api/github-releases/route.ts`
+Without a token, GitHub allows 60 requests per hour from each IP address; with a token,
+5,000 per hour. To use one, set the `GITHUB_TOKEN` environment variable: the route reads it
+on its own, with no code to change. If GitHub rejects the token (a `401`, or a `403` that is
+not a rate limit), the route retries without it, since public releases can be read
+anonymously.
 
-```ts
-    const response = await fetch(
-      `${config.gitHub.releasesUrl}?per_page=${config.releaseNotes.maxReleases}`,
-      {
-        headers: {
-          Accept: 'application/vnd.github+json',
-          // Authorization: `Bearer ${process.env.GITHUB_TOKEN}`, // Optional for rate limit
-        },
-      }
-    );
-```
+The token only reads public data, so give it nothing more: a fine-grained token with
+read-only access to public repositories, or a classic token with no scopes. The `repo`
+scope is not needed, and it would grant full access to your private repositories.
 
 ## Version API
 
-The `/api/version` route returns the current version of the application, read from
-`package.json`:
+`/api/version` returns the `version` field of `package.json`, for example:
 
 ```json
-{ "version": "0.1.0" }
+{ "version": "1.0.0" }
 ```
+
+## Static export
+
+`yarn build:static` builds a fully static site (`output: 'export'`), the way this
+template's own demo is deployed on GitHub Pages. It sets `NEXT_PUBLIC_STATIC_EXPORT=1`,
+and `NEXT_PUBLIC_BASE_PATH` sets the base path (`/next-app-fumadocs-template` on Pages).
+Nothing has to be changed by hand: the routes and the components read the same variable.
+With no server to answer requests, each route is written out once at build time:
+
+- `/api/search` becomes the whole Orama index, exported as a static file. The search box
+  downloads it and runs every query in the browser, so the route ignores `query` there.
+- `/api/github-releases` becomes a stub,
+  `{ "error": "Not available in static export", "releases": [] }`. The Release Notes page
+  calls the GitHub API straight from the browser instead, within GitHub's 60 requests per
+  hour for each visitor's IP address.
+- `/api/version` becomes the version of the build.
+
+> [!NOTE]
+>
+> Next.js only exports route handlers marked `dynamic = 'force-static'`, and that setting
+> cannot be conditional. `yarn build:static` therefore runs
+> `scripts/static-export-prepare.mjs` first, which appends it to the three routes. The
+> change is meant to be thrown away: CI builds start from a clean checkout, and locally you
+> restore the routes with `git checkout -- app/api`.
