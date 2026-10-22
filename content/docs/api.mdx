@@ -55,7 +55,7 @@ The index stays on the server and the route answers queries: try `/api/search?qu
 
 The search UI is a [Mantine Spotlight](https://mantine.dev/x/spotlight/) fed by the
 headless `useDocsSearch` hook: open it with `⌘K` (or `/`). It queries the route on a server
-deployment, and downloads the static index in a static export:
+deployment, and downloads the index in a [static export](#static-export):
 
 ```tsx title="components/docs/DocsSearch.tsx"
 const { search, setSearch, query } = useDocsSearch(
@@ -63,12 +63,10 @@ const { search, setSearch, query } = useDocsSearch(
 );
 ```
 
-The filter row above the results (All, Guides, Examples, Reference) comes from
-`config.search.filters`.
-
 ### Config
 
-The search language and the filters live in the `config/index.ts` file:
+The search language and the filter row above the results (All, Guides, Examples,
+Reference) live in the `config/index.ts` file:
 
 ```ts title="config/index.ts"
   /**
@@ -162,9 +160,8 @@ on its own, with no code to change. If GitHub rejects the token (a `401`, or a `
 not a rate limit), the route retries without it, since public releases can be read
 anonymously.
 
-The token only reads public data, so give it nothing more: a fine-grained token with
-read-only access to public repositories, or a classic token with no scopes. The `repo`
-scope is not needed, and it would grant full access to your private repositories.
+A read-only token is enough, as the config comment above says: the `repo` scope is not
+needed, and it would grant full access to your private repositories.
 
 ## Version API
 
