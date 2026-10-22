@@ -37,7 +37,7 @@ This is a **Next.js 16 + Mantine 9 + Fumadocs (headless)** template: a documenta
 - `components/docs/DocsShell` — sidebar (recursive `NavLink` tree) + mobile `Drawer`; the page tree is serialized server-side (`source.serializePageTree`) and rehydrated client-side (`deserializePageTree`)
 - `components/docs/Toc` — scroll-spy TOC on `fumadocs-core/toc` primitives (`AnchorProvider`/`TOCItem`), styled via `[data-active]`
 - `components/docs/PageFooter` — prev/next from `findNeighbour`
-- `components/docs/DocsSearch` — Mantine Spotlight fed by `useDocsSearch({ type: 'fetch' })`; trigger in the navbar, shortcut `mod+K`
+- `components/docs/DocsSearch` — Mantine Spotlight fed by `useDocsSearch`: `type: 'fetch'` on a server build, `type: 'static'` (the exported index) when `NEXT_PUBLIC_STATIC_EXPORT=1`; trigger in the navbar, shortcut `mod+K`
 - `components/mdx/` — the MDX component map (`getMDXComponents`): headings, links, tables, CodeBlock (build-time Shiki + copy button), GitHub-alert blockquotes, Callout, Steps, FileTree
 
 ### RSC gotchas (learned the hard way)
@@ -55,7 +55,7 @@ This is a **Next.js 16 + Mantine 9 + Fumadocs (headless)** template: a documenta
 
 ### API Routes (`app/api/`)
 
-- `search/` — Orama search built from the docs source (`createFromSource(source).GET`); switch to `staticGET` for static export
+- `search/` — Orama search built from the docs source (`createFromSource`): `GET` on a server build, `staticGET` (the whole index as a file) when `NEXT_PUBLIC_STATIC_EXPORT=1`, chosen in the route itself
 - `github-releases/` — proxies GitHub releases API (configured in `config/index.ts`)
 - `version/` — returns current package version
 
