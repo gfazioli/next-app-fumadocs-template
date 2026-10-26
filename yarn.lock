@@ -2275,40 +2275,40 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gfazioli/mantine-border-animate@npm:^3.0.7":
-  version: 3.0.7
-  resolution: "@gfazioli/mantine-border-animate@npm:3.0.7"
+"@gfazioli/mantine-border-animate@npm:^3.0.8":
+  version: 3.0.8
+  resolution: "@gfazioli/mantine-border-animate@npm:3.0.8"
   peerDependencies:
     "@mantine/core": ">=9.0.0"
     "@mantine/hooks": ">=9.0.0"
     "@tabler/icons-react": ^3.34.0
     react: ^18.x || ^19.x
     react-dom: ^18.x || ^19.x
-  checksum: 10c0/c1d390039a6be188e85f65a3ae7686a0be7e2adbdccf8fa57c13290e0b1a4c18d9e4372c194b85ea675c89c66b59bab3d9d76b612d11b59db3556aa9b77973f5
+  checksum: 10c0/742fbf2c81c556496b00fec5616760fbaab33ddaf9a7f64c13e360a3cf8800103ba4444d8f3cd7c9b9b521d85ec5c8d737f73d4be5bfe4d630b6ebf84c7b7013
   languageName: node
   linkType: hard
 
-"@gfazioli/mantine-marquee@npm:^5.0.3":
-  version: 5.0.3
-  resolution: "@gfazioli/mantine-marquee@npm:5.0.3"
+"@gfazioli/mantine-marquee@npm:^5.0.4":
+  version: 5.0.4
+  resolution: "@gfazioli/mantine-marquee@npm:5.0.4"
   peerDependencies:
     "@mantine/core": ">=9.0.0"
     "@mantine/hooks": ">=9.0.0"
     react: ^18.x || ^19.x
     react-dom: ^18.x || ^19.x
-  checksum: 10c0/e1f107a621a7df10b0ea270cb29a68d8ed513de4bd3f34cfca662b123e28b326495b38ad970aa60a7329443aa7eb25bdc6ddb0c7136f0e9fd9d58d791a1817ea
+  checksum: 10c0/fbb647c0bd357d9c61a3291879336e32247300fa7066be41eca504d016f314140b55fdff01f642ec3b450451ddcf8339ce30faa9556113dd98713e3cd343bb6b
   languageName: node
   linkType: hard
 
-"@gfazioli/mantine-text-animate@npm:^4.0.17":
-  version: 4.0.17
-  resolution: "@gfazioli/mantine-text-animate@npm:4.0.17"
+"@gfazioli/mantine-text-animate@npm:^4.0.18":
+  version: 4.0.18
+  resolution: "@gfazioli/mantine-text-animate@npm:4.0.18"
   peerDependencies:
     "@mantine/core": ">=9.0.0"
     "@mantine/hooks": ">=9.0.0"
     react: ^18.x || ^19.x
     react-dom: ^18.x || ^19.x
-  checksum: 10c0/f1d9d7f4908a0afc7d2d3a676797e93c148e81d54645d1e10f0f73549213516707346c76f4f1a2f60ebdcde76a1838ce37017e867bd33c944525f34a4184a53e
+  checksum: 10c0/63822ed50c287cd30ce04cb502f1dc19e4b04710bc8c33b4c0f9ae3216e30033e4db2edbf683dc691a89a9d9ff4a7144c543e5e30a9c040f6d8ae08d5ac3b498
   languageName: node
   linkType: hard
 
@@ -3111,9 +3111,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/core@npm:9.7.3":
-  version: 9.7.3
-  resolution: "@mantine/core@npm:9.7.3"
+"@mantine/core@npm:9.7.4":
+  version: 9.7.4
+  resolution: "@mantine/core@npm:9.7.4"
   dependencies:
     "@floating-ui/react": "npm:^0.27.20"
     clsx: "npm:^2.1.1"
@@ -3121,42 +3121,42 @@ __metadata:
     react-remove-scroll: "npm:^2.7.2"
     type-fest: "npm:^5.10.0"
   peerDependencies:
-    "@mantine/hooks": 9.7.3
+    "@mantine/hooks": 9.7.4
     react: ^19.2.0
     react-dom: ^19.2.0
-  checksum: 10c0/9d65c4f8de7ae35fc0dc8c461b6b4765a2ae836c2708644c94269612626373ccc18b619b42249f5ddd1b7aaca88099d6f64ee3c4674fbddd1ee27ca30ada8e1b
+  checksum: 10c0/63537641981488741d2d403bd77c6ef4b8d6ee0780eed11e2691a6ec6d663803c00e90ba89e78f16abb3248e388c51bd08af34187bfe721d2aa383f23654989e
   languageName: node
   linkType: hard
 
-"@mantine/hooks@npm:9.7.3":
-  version: 9.7.3
-  resolution: "@mantine/hooks@npm:9.7.3"
+"@mantine/hooks@npm:9.7.4":
+  version: 9.7.4
+  resolution: "@mantine/hooks@npm:9.7.4"
   peerDependencies:
     react: ^19.2.0
-  checksum: 10c0/ca28e942e8f6c189e8b82aeb829deedda19895e4a8b6eca01fc1985b63af8fbe2b1a93da14e2ffc6bc8a426ee1dd5046317ce83a142218df6846cbd7c8e1efe8
+  checksum: 10c0/14c5c9d5d4ce6af69cf837502749bdd23694e62b091e811d9198107bec83310c350231079c1f26964eebe6ddb8345c2ef365ed1dd546e69219187b9ed75131ee
   languageName: node
   linkType: hard
 
-"@mantine/spotlight@npm:9.7.3":
-  version: 9.7.3
-  resolution: "@mantine/spotlight@npm:9.7.3"
+"@mantine/spotlight@npm:9.7.4":
+  version: 9.7.4
+  resolution: "@mantine/spotlight@npm:9.7.4"
   dependencies:
-    "@mantine/store": "npm:9.7.3"
+    "@mantine/store": "npm:9.7.4"
   peerDependencies:
-    "@mantine/core": 9.7.3
-    "@mantine/hooks": 9.7.3
+    "@mantine/core": 9.7.4
+    "@mantine/hooks": 9.7.4
     react: ^19.2.0
     react-dom: ^19.2.0
-  checksum: 10c0/3da862f25171ffbba4926f1c66ace0bb330d7f9187f2a6489272374eff2f67faa05258fe908efe6a4f7cbdf2a059375de74cbcb6f98bd83c9428d8f18ceec0b1
+  checksum: 10c0/4bedf5e9659afaaf5309a19675d7c0af3d755a1fb4e0d350deace7441b7f3128ec86ea5d177632213d5c66282b0ed951f1e8361970e37b94c1be047f60ba3218
   languageName: node
   linkType: hard
 
-"@mantine/store@npm:9.7.3":
-  version: 9.7.3
-  resolution: "@mantine/store@npm:9.7.3"
+"@mantine/store@npm:9.7.4":
+  version: 9.7.4
+  resolution: "@mantine/store@npm:9.7.4"
   peerDependencies:
     react: ^19.2.0
-  checksum: 10c0/377c6bca8b0345c4ecb666c2824873831f40dcbc8c429033f3e61a3efff60a9f435b0499eb79edbb5c92317c1a0ecbf3fbf27b1cc73056b4fc01e1b45a528757
+  checksum: 10c0/2f329276561369f4bc42beae29b6b3d583210e2794cbec89af043c4e4c3c7b638e19418cac7da63b1862793eb43e259874c7022ea395e3c8b76755b5377ac223
   languageName: node
   linkType: hard
 
@@ -3217,74 +3217,74 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/bundle-analyzer@npm:^16.4.2":
-  version: 16.4.2
-  resolution: "@next/bundle-analyzer@npm:16.4.2"
+"@next/bundle-analyzer@npm:^16.4.3":
+  version: 16.4.3
+  resolution: "@next/bundle-analyzer@npm:16.4.3"
   dependencies:
     webpack-bundle-analyzer: "npm:4.10.1"
-  checksum: 10c0/1e9624243d2591394fbecd8fdcba00436a7be3a9cc4f21af19cfcddac6e7ac132da66eaa8446518a8b6977c74b9872635cef2e65516d13a690d0f3791e3e12e7
+  checksum: 10c0/aabc9eae8db19f7a276fd4a696514bc8c781e80bba41813aa6089e14670531ac81ad22d93c102146c818644a1036566701710e8ef9aba21bf3268de025c90a7b
   languageName: node
   linkType: hard
 
-"@next/env@npm:16.4.2":
-  version: 16.4.2
-  resolution: "@next/env@npm:16.4.2"
-  checksum: 10c0/7cb9bcb53b9c1aa2990da738d4ded24ead689255c98cfc47ee34250137c262ff9c8b3ead09601d6e10887138d93e3e08aca79c895f2dc9803ccbed6f76b8db63
+"@next/env@npm:16.4.3":
+  version: 16.4.3
+  resolution: "@next/env@npm:16.4.3"
+  checksum: 10c0/9502fdaed8caa4a31aa05fec41c71c573ea5def37ecc2f3f935c06443f6c38e74074f62ffbd924605621f105161189d4f37fdb105d3ddeeac9cee03007b61f43
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-arm64@npm:16.4.2":
-  version: 16.4.2
-  resolution: "@next/swc-darwin-arm64@npm:16.4.2"
+"@next/swc-darwin-arm64@npm:16.4.3":
+  version: 16.4.3
+  resolution: "@next/swc-darwin-arm64@npm:16.4.3"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-x64@npm:16.4.2":
-  version: 16.4.2
-  resolution: "@next/swc-darwin-x64@npm:16.4.2"
+"@next/swc-darwin-x64@npm:16.4.3":
+  version: 16.4.3
+  resolution: "@next/swc-darwin-x64@npm:16.4.3"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-gnu@npm:16.4.2":
-  version: 16.4.2
-  resolution: "@next/swc-linux-arm64-gnu@npm:16.4.2"
+"@next/swc-linux-arm64-gnu@npm:16.4.3":
+  version: 16.4.3
+  resolution: "@next/swc-linux-arm64-gnu@npm:16.4.3"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-musl@npm:16.4.2":
-  version: 16.4.2
-  resolution: "@next/swc-linux-arm64-musl@npm:16.4.2"
+"@next/swc-linux-arm64-musl@npm:16.4.3":
+  version: 16.4.3
+  resolution: "@next/swc-linux-arm64-musl@npm:16.4.3"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-gnu@npm:16.4.2":
-  version: 16.4.2
-  resolution: "@next/swc-linux-x64-gnu@npm:16.4.2"
+"@next/swc-linux-x64-gnu@npm:16.4.3":
+  version: 16.4.3
+  resolution: "@next/swc-linux-x64-gnu@npm:16.4.3"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-musl@npm:16.4.2":
-  version: 16.4.2
-  resolution: "@next/swc-linux-x64-musl@npm:16.4.2"
+"@next/swc-linux-x64-musl@npm:16.4.3":
+  version: 16.4.3
+  resolution: "@next/swc-linux-x64-musl@npm:16.4.3"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-win32-arm64-msvc@npm:16.4.2":
-  version: 16.4.2
-  resolution: "@next/swc-win32-arm64-msvc@npm:16.4.2"
+"@next/swc-win32-arm64-msvc@npm:16.4.3":
+  version: 16.4.3
+  resolution: "@next/swc-win32-arm64-msvc@npm:16.4.3"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-win32-x64-msvc@npm:16.4.2":
-  version: 16.4.2
-  resolution: "@next/swc-win32-x64-msvc@npm:16.4.2"
+"@next/swc-win32-x64-msvc@npm:16.4.3":
+  version: 16.4.3
+  resolution: "@next/swc-win32-x64-msvc@npm:16.4.3"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -6416,12 +6416,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chokidar@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "chokidar@npm:5.0.0"
+"chokidar@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "chokidar@npm:6.0.0"
   dependencies:
-    readdirp: "npm:^5.0.0"
-  checksum: 10c0/42fc907cb2a7ff5c9e220f84dae75380a77997f851c2a5e7865a2cf9ae45dd407a23557208cdcdbf3ac8c93341135a1748e4c48c31855f3bfa095e5159b6bdec
+    readdirp: "npm:^5.1.1"
+  checksum: 10c0/75651391e81b0cf7efa8ec373b68afaf1ad13283e8cae01737976bd0ff72fcb5afac75942ac3c07393d414269737229eb7648d74d32a1373764ecd0711b626b9
   languageName: node
   linkType: hard
 
@@ -8152,18 +8152,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fumadocs-core@npm:16.17.7":
-  version: 16.17.7
-  resolution: "fumadocs-core@npm:16.17.7"
+"fumadocs-core@npm:16.17.8":
+  version: 16.17.8
+  resolution: "fumadocs-core@npm:16.17.8"
   dependencies:
     "@fumari/image-size": "npm:^0.1.1"
     estree-util-value-to-estree: "npm:^3.5.0"
     github-slugger: "npm:^2.0.0"
     hast-util-from-dom: "npm:^5.0.1"
     hast-util-to-estree: "npm:^3.1.3"
-    hast-util-to-jsx-runtime: "npm:^2.3.6"
     mdast-util-mdx: "npm:^3.0.0"
-    micromark: "npm:^4.0.2"
+    micromark: "npm:^4.0.3"
     micromark-extension-gfm-table: "npm:^2.1.2"
     npm-to-yarn: "npm:3.2.0"
     remark: "npm:^15.0.1"
@@ -8182,6 +8181,7 @@ __metadata:
     "@modelcontextprotocol/server": 2.x.x
     "@orama/core": 1.x.x
     "@oramacloud/client": 2.x.x
+    "@pierre/highlights": ^0.2.0
     "@tanstack/react-router": 1.x.x
     "@types/estree-jsx": "*"
     "@types/hast": "*"
@@ -8207,6 +8207,8 @@ __metadata:
     "@orama/core":
       optional: true
     "@oramacloud/client":
+      optional: true
+    "@pierre/highlights":
       optional: true
     "@tanstack/react-router":
       optional: true
@@ -8238,17 +8240,17 @@ __metadata:
       optional: true
     zod:
       optional: true
-  checksum: 10c0/7a0d8c45d6761f850bf925d039b87f6091fb534ce69f81c8c8afed1766087d23413c8371514383df004f87935a12d78f5107e434b9da0c3dcab445b42c75a9d0
+  checksum: 10c0/59bbf539ab27b70976e4beae86101ebdaf66d3c557fcbf3580bcbf198501a1d5795da4aa8a1c536b706962ceff08f33eb85f183ce51f6a1a69cc52e68d292570
   languageName: node
   linkType: hard
 
-"fumadocs-mdx@npm:15.4.9":
-  version: 15.4.9
-  resolution: "fumadocs-mdx@npm:15.4.9"
+"fumadocs-mdx@npm:15.4.10":
+  version: 15.4.10
+  resolution: "fumadocs-mdx@npm:15.4.10"
   dependencies:
     "@mdx-js/mdx": "npm:^3.1.1"
     "@standard-schema/spec": "npm:^1.1.0"
-    chokidar: "npm:^5.0.0"
+    chokidar: "npm:^6.0.0"
     esbuild: "npm:^0.28.2"
     estree-util-value-to-estree: "npm:^3.5.0"
     github-slugger: "npm:^2.0.0"
@@ -8269,7 +8271,7 @@ __metadata:
     "@types/mdast": "*"
     "@types/mdx": "*"
     "@types/react": "*"
-    fumadocs-core: ^16.17.0
+    fumadocs-core: ^16.17.8
     mdast-util-directive: "*"
     next: ^15.3.0 || ^16.0.0
     react: ^19.2.0
@@ -8299,7 +8301,7 @@ __metadata:
       optional: true
   bin:
     fumadocs-mdx: ./bin.js
-  checksum: 10c0/1dea00da6b7859f35c4dcca958e29f9e290d9d1275bffb90ac084374077714e9ebf4968a026e5a34c10e8eea52f52e28c965da4d3e4eae042862a8bc5c44bda9
+  checksum: 10c0/cf4c39a6de3df39811011d724d3b3872c7d3cce2432196cfebbf637d509c310e51e0ea071cb63c1739f0556aefcc6490c990c5067bb49ad4503d1469389c3ca4
   languageName: node
   linkType: hard
 
@@ -8770,29 +8772,6 @@ __metadata:
     unist-util-position: "npm:^5.0.0"
     vfile-message: "npm:^4.0.0"
   checksum: 10c0/97761b2a48b8bc37da3d66cb4872312ae06c6e8f9be59e33b04b21fa5af371a39cb23b3ca165dd8e898ba1caf9b76399da35c957e68bad02a587a3a324216d56
-  languageName: node
-  linkType: hard
-
-"hast-util-to-jsx-runtime@npm:^2.3.6":
-  version: 2.3.6
-  resolution: "hast-util-to-jsx-runtime@npm:2.3.6"
-  dependencies:
-    "@types/estree": "npm:^1.0.0"
-    "@types/hast": "npm:^3.0.0"
-    "@types/unist": "npm:^3.0.0"
-    comma-separated-tokens: "npm:^2.0.0"
-    devlop: "npm:^1.0.0"
-    estree-util-is-identifier-name: "npm:^3.0.0"
-    hast-util-whitespace: "npm:^3.0.0"
-    mdast-util-mdx-expression: "npm:^2.0.0"
-    mdast-util-mdx-jsx: "npm:^3.0.0"
-    mdast-util-mdxjs-esm: "npm:^2.0.0"
-    property-information: "npm:^7.0.0"
-    space-separated-tokens: "npm:^2.0.0"
-    style-to-js: "npm:^1.0.0"
-    unist-util-position: "npm:^5.0.0"
-    vfile-message: "npm:^4.0.0"
-  checksum: 10c0/27297e02848fe37ef219be04a26ce708d17278a175a807689e94a821dcffc88aa506d62c3a85beed1f9a8544f7211bdcbcde0528b7b456a57c2e342c3fd11056
   languageName: node
   linkType: hard
 
@@ -10379,13 +10358,13 @@ __metadata:
   resolution: "mantine-next-fumadocs-template@workspace:."
   dependencies:
     "@babel/core": "npm:^7.29.7"
-    "@gfazioli/mantine-border-animate": "npm:^3.0.7"
-    "@gfazioli/mantine-marquee": "npm:^5.0.3"
-    "@gfazioli/mantine-text-animate": "npm:^4.0.17"
-    "@mantine/core": "npm:9.7.3"
-    "@mantine/hooks": "npm:9.7.3"
-    "@mantine/spotlight": "npm:9.7.3"
-    "@next/bundle-analyzer": "npm:^16.4.2"
+    "@gfazioli/mantine-border-animate": "npm:^3.0.8"
+    "@gfazioli/mantine-marquee": "npm:^5.0.4"
+    "@gfazioli/mantine-text-animate": "npm:^4.0.18"
+    "@mantine/core": "npm:9.7.4"
+    "@mantine/hooks": "npm:9.7.4"
+    "@mantine/spotlight": "npm:9.7.4"
+    "@next/bundle-analyzer": "npm:^16.4.3"
     "@storybook/addon-themes": "npm:^10.6.3"
     "@storybook/nextjs": "npm:^10.6.3"
     "@storybook/react": "npm:^10.6.3"
@@ -10400,12 +10379,12 @@ __metadata:
     "@types/react": "npm:19.3.0"
     "@vercel/analytics": "npm:^1.6.1"
     babel-loader: "npm:^10.1.1"
-    fumadocs-core: "npm:16.17.7"
-    fumadocs-mdx: "npm:15.4.9"
+    fumadocs-core: "npm:16.17.8"
+    fumadocs-mdx: "npm:15.4.10"
     jest: "npm:^30.5.2"
     jest-environment-jsdom: "npm:^30.5.2"
     marked: "npm:^18.1.1"
-    next: "npm:16.4.2"
+    next: "npm:16.4.3"
     oxfmt: "npm:^0.74.0"
     oxlint: "npm:^1.89.0"
     postcss: "npm:^8.5.31"
@@ -11207,7 +11186,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"micromark@npm:^4.0.2":
+"micromark@npm:^4.0.3":
   version: 4.0.3
   resolution: "micromark@npm:4.0.3"
   dependencies:
@@ -11586,19 +11565,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:16.4.2":
-  version: 16.4.2
-  resolution: "next@npm:16.4.2"
+"next@npm:16.4.3":
+  version: 16.4.3
+  resolution: "next@npm:16.4.3"
   dependencies:
-    "@next/env": "npm:16.4.2"
-    "@next/swc-darwin-arm64": "npm:16.4.2"
-    "@next/swc-darwin-x64": "npm:16.4.2"
-    "@next/swc-linux-arm64-gnu": "npm:16.4.2"
-    "@next/swc-linux-arm64-musl": "npm:16.4.2"
-    "@next/swc-linux-x64-gnu": "npm:16.4.2"
-    "@next/swc-linux-x64-musl": "npm:16.4.2"
-    "@next/swc-win32-arm64-msvc": "npm:16.4.2"
-    "@next/swc-win32-x64-msvc": "npm:16.4.2"
+    "@next/env": "npm:16.4.3"
+    "@next/swc-darwin-arm64": "npm:16.4.3"
+    "@next/swc-darwin-x64": "npm:16.4.3"
+    "@next/swc-linux-arm64-gnu": "npm:16.4.3"
+    "@next/swc-linux-arm64-musl": "npm:16.4.3"
+    "@next/swc-linux-x64-gnu": "npm:16.4.3"
+    "@next/swc-linux-x64-musl": "npm:16.4.3"
+    "@next/swc-win32-arm64-msvc": "npm:16.4.3"
+    "@next/swc-win32-x64-msvc": "npm:16.4.3"
     "@swc/helpers": "npm:0.5.23"
     baseline-browser-mapping: "npm:^2.9.19"
     caniuse-lite: "npm:^1.0.30001579"
@@ -11642,7 +11621,7 @@ __metadata:
       optional: true
   bin:
     next: dist/bin/next
-  checksum: 10c0/5d6c6949b1d5505ed2bb12c0adaa18ea608be47d1a70df172e204297c6e0080dc6bf675dce8bfa60962c0f28f2e2e75b21eef26e9fc39a8526cba383c51c273e
+  checksum: 10c0/a61625eb95fa29f15d84a71333d24ebb5a2666bf7a8235aa3d6eb3ac8c9ea1159c12ffbfe5f4c315646a34b6fcaf87b3b3f737222b364e331f7e6da16d1d857e
   languageName: node
   linkType: hard
 
@@ -13151,10 +13130,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"readdirp@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "readdirp@npm:5.0.0"
-  checksum: 10c0/faf1ec57cff2020f473128da3f8d2a57813cc3a08a36c38cae1c9af32c1579906cc50ba75578043b35bade77e945c098233665797cf9730ba3613a62d6e79219
+"readdirp@npm:^5.1.1":
+  version: 5.1.1
+  resolution: "readdirp@npm:5.1.1"
+  checksum: 10c0/5e99755684b9104761e48801828f4d2614efa33b1698629929c5985184dc63a7f8233c827832c40dc7be16b00cc871d303cf9de396d2fb74b9465ee2aa2424a1
   languageName: node
   linkType: hard
 
