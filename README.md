@@ -1,34 +1,46 @@
 # Mantine Next.js + Fumadocs template
 
 <div align="center">
-
-[<kbd> <br/> ❤️ If this component has been useful to you or your team, please consider becoming a sponsor <br/> </kbd>](https://github.com/sponsors/gfazioli?o=esc)
-
-</div>
-
-<div align="center">
   <p><img src="https://raw.githubusercontent.com/gfazioli/gfazioli/master/glancecard/next-app-fumadocs-template.svg" width="880" alt="next-app-fumadocs-template at a glance, refreshed daily: commits, releases, stars, issues and pull requests, a year of commit activity, the weekly rhythm, languages, latest commits and releases, contributors" /><br>
   <sub>Made with <a href="https://github.com/gfazioli/glancecard">glancecard</a> · refreshed daily</sub></p>
 </div>
 
-This is a template for a [Next.js](https://nextjs.org/) App Router + [Mantine](https://mantine.dev/) + [Fumadocs](https://www.fumadocs.dev/) documentation site.
+A [Next.js](https://nextjs.org/) App Router template for documentation sites, on [Mantine](https://mantine.dev/) and [Fumadocs](https://www.fumadocs.dev/).
 
-The docs UI is built **100% with Mantine** on top of the headless `fumadocs-core` — no Tailwind, no third-party docs theme, a single styling system for the whole app. Change `primaryColor` in `theme.ts` and the entire docs UI follows.
+**The engine is headless Fumadocs**: `fumadocs-core` and `fumadocs-mdx` handle the content, the page tree and the search index, and the docs UI on top of them is built **100% with Mantine**. No Tailwind, no third-party docs theme, a single styling system for the whole app: change `primaryColor` in `theme.ts` and the entire docs UI follows.
 
-> Looking for the [Nextra](https://nextra.site/) flavor? Check out the sibling template [next-app-nextra-template](https://github.com/gfazioli/next-app-nextra-template).
+**[Live demo](https://gfazioli.github.io/next-app-fumadocs-template/)** · [Documentation](https://gfazioli.github.io/next-app-fumadocs-template/docs) · [Release notes](https://github.com/gfazioli/next-app-fumadocs-template/releases) · [Mantine Extensions Hub](https://mantine-extensions.vercel.app/)
+
+<div align="center">
+
+[<kbd> <br/> ❤️ If this template has been useful to you or your team, please consider becoming a sponsor <br/> </kbd>](https://github.com/sponsors/gfazioli?o=esc)
+
+</div>
+
+## One design, three engines
+
+The same Mantine starter comes on three documentation engines: the same landing page, the same footer and the same Mantine look. What changes is what compiles and serves the docs.
+
+| Template | Engine | Live demo |
+| --- | --- | --- |
+| [Mantine Next.js + Docs](https://github.com/gfazioli/next-app-mantine-docs-template) | [`@next/mdx`](https://nextjs.org/docs/app/guides/mdx): no docs framework, every piece of the interface a Mantine component | [next-app-mantine-docs-template.vercel.app](https://next-app-mantine-docs-template.vercel.app/) |
+| [Mantine Next.js + Nextra](https://github.com/gfazioli/next-app-nextra-template) | [Nextra 4](https://nextra.site/) and its docs theme, with Mantine wired in | [next-app-nextra-template.vercel.app](https://next-app-nextra-template.vercel.app/) |
+| **Mantine Next.js + Fumadocs** (this one) | headless [`fumadocs-core`](https://www.fumadocs.dev/) under a docs UI built 100% with Mantine | [gfazioli.github.io/next-app-fumadocs-template](https://gfazioli.github.io/next-app-fumadocs-template/) |
+
+Looking for components to put in your docs? The [Mantine Extensions Hub](https://mantine-extensions.vercel.app/) lists the same author's open-source extensions for Mantine.
 
 ## Quick start
 
 ```bash
-git clone https://github.com/gfazioli/next-app-fumadocs-template my-docs
+git clone https://github.com/gfazioli/next-app-fumadocs-template.git my-docs
 cd my-docs
 yarn install
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) — the landing page lives at `/`, the documentation at `/docs`. Add pages in `content/docs` and order them in `content/docs/meta.json`.
+Open [http://localhost:3000](http://localhost:3000): the landing page is at `/`, the documentation at `/docs`. Add pages in `content/docs` and order them in `content/docs/meta.json`.
 
-**Requirements**: Node.js ≥ 24, Yarn 4 (bundled — do not use npm or pnpm).
+**Requirements**: Node.js 24 (see `.nvmrc`) and Yarn 4, which the repository pins: do not use npm or pnpm.
 
 ## Features
 
@@ -57,55 +69,44 @@ This template comes with the following features:
 - Mantine-native MDX components: Callout, Steps, FileTree, fully-styled tables — all customizable in `components/mdx`
 - Single source of truth for dark mode: Mantine color scheme manager (no `next-themes`)
 - GitHub Release Notes integration via API
+- A landing page and a footer shared with the two sibling templates, with the versions of the stack read from `package.json` at build time
 
 ## Folder structure
 
 - `app` – Next.js App Router pages, layouts, and API routes
 - `components` – shared components, including `components/docs` (docs shell) and `components/mdx` (MDX map)
+- `components/Home` – the landing page, section by section
 - `content/docs` – documentation content (`.mdx` files and `meta.json` for sidebar order; `guides/` shows the folder convention)
-- `config` – centralized site configuration (metadata, GitHub API, search)
+- `config` – centralized site configuration (metadata, GitHub API, search); `config/site.ts` says which of the three templates this is
 - `lib/source.ts` – the fumadocs content source (loader)
 - `source.config.ts` – fumadocs-mdx collections and schemas
 
 The shipped documentation doubles as a feature tour: Getting Started, MDX Components showcase, Customize UI and Search guides.
 
-## Deploy
-
-- **GitHub Pages** (fully static — this is how the live demo is hosted): `yarn build:static` produces a static export with a pre-rendered Orama search index; the bundled `.github/workflows/deploy-pages.yml` workflow publishes it on every push to `main`. Release notes are fetched by the browser directly from the GitHub API. **Live demo: [gfazioli.github.io/next-app-fumadocs-template](https://gfazioli.github.io/next-app-fumadocs-template/)**
-- **Vercel / Node**: import the repo and deploy — the search API turns dynamic (the client stays lightweight) and the GitHub releases go through the bundled proxy with optional token.
-
 ## Why headless (no Tailwind)?
 
 `fumadocs-ui` — the official theme — is built on Tailwind CSS v4. Pairing it with Mantine means maintaining two styling systems and reconciling their cascade layers. This template instead consumes only the headless `fumadocs-core` (page tree, TOC scroll-spy, breadcrumbs, search — zero styling opinions) and paints everything with Mantine. One design system, one theme, no conflicts — and the docs UI lives in your repo as plain React + Mantine code you can freely edit.
 
-## npm scripts
+## Scripts
 
-### Build and dev scripts
+- `dev` – the dev server
+- `build` – the production build
+- `build:static` – a static export to `out/` (GitHub Pages), with a pre-rendered search index
+- `analyze` – bundle analysis with [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)
+- `test` – fumadocs-mdx codegen, typegen, formatting, lint, types and Jest
+- `typecheck`, `lint`, `jest`, `jest:watch`, `format:test`, `format:write`
+- `storybook`, `storybook:build`
 
-- `dev` – start dev server
-- `build` – bundle application for production
-- `analyze` – analyzes application bundle with [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)
+## Deploy
 
-### Testing scripts
-
-- `typecheck` – checks TypeScript types
-- `lint` – runs oxlint and Stylelint
-- `format:test` – checks files with oxfmt
-- `jest` – runs jest tests
-- `jest:watch` – starts jest watch
-- `test` – runs `format:test`, `lint`, `typecheck` and `jest` scripts
-
-### Other scripts
-
-- `storybook` – starts storybook dev server
-- `storybook:build` – build production storybook bundle to `storybook-static`
-- `format:write` – formats all files with oxfmt
+- **GitHub Pages** (fully static — this is how the live demo is hosted): `yarn build:static` produces a static export with a pre-rendered Orama search index; the bundled `.github/workflows/deploy-pages.yml` workflow publishes it on every push to `main`. Release notes are fetched by the browser directly from the GitHub API.
+- **Vercel / Node**: import the repo and deploy — the search API turns dynamic (the client stays lightweight) and the GitHub releases go through the bundled proxy with optional token.
 
 ## Sponsor
 
 <div align="center">
 
-[<kbd> <br/> ❤️ If this component has been useful to you or your team, please consider becoming a sponsor <br/> </kbd>](https://github.com/sponsors/gfazioli?o=esc)
+[<kbd> <br/> ❤️ If this template has been useful to you or your team, please consider becoming a sponsor <br/> </kbd>](https://github.com/sponsors/gfazioli?o=esc)
 
 </div>
 
