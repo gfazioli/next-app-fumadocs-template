@@ -1,14 +1,13 @@
-import { Container } from '@mantine/core';
-import { ColorSchemeToggle } from '@/components/ColorSchemeToggle/ColorSchemeToggle';
-import { Content } from '@/components/Content/Content';
-import { Welcome } from '@/components/Welcome/Welcome';
+import { HomePage } from '@/components/Home/HomePage';
 
-export default function HomePage() {
+// Product Hunt badge: after launching the template on Product Hunt, import
+// `ProductHunt` from '@/components/ProductHunt/ProductHunt' and pass it as
+// `<HomePage badge={<ProductHunt />} />`.
+
+export default function Page() {
   return (
-    <Container component="main" mih="calc(100vh - 328px)">
-      <Welcome />
-      <ColorSchemeToggle />
-      <Content />
-    </Container>
+    <main>
+      <HomePage />
+    </main>
   );
 }
