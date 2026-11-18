@@ -8,7 +8,9 @@ export const dynamic = 'force-static';
 // metadataBase carries the base path: URLs are resolved relative to it ("./docs/…"), since an
 // absolute "/docs/…" would drop it. Only the static export has trailing slashes
 // (next.config.mjs); on a server "/docs/api/" would answer with a redirect.
-const SITE_URL = config.metadata.metadataBase.href;
+// A base without its trailing slash ("https://example.com/my-docs") would make "./docs/…" replace
+// its last segment instead of extending it.
+const SITE_URL = config.metadata.metadataBase.href.replace(/\/?$/, '/');
 const TRAILING_SLASH = process.env.NEXT_PUBLIC_STATIC_EXPORT === '1';
 const toUrl = (route: string) =>
   new URL(

@@ -100,7 +100,7 @@ The shipped documentation doubles as a feature tour: Getting Started, MDX Compon
 ## Deploy
 
 - **Vercel / Node** (this is how the live demo is hosted): import the repo and deploy — the search API turns dynamic (the client stays lightweight) and the GitHub releases go through the bundled proxy with optional token.
-- **GitHub Pages** (fully static): `yarn build:static` produces a static export with a pre-rendered Orama search index; the bundled `.github/workflows/deploy-pages.yml` workflow publishes it on every push to `main`, with the base path and the site URL taken from the repository's name. Release notes are fetched by the browser directly from the GitHub API.
+- **GitHub Pages** (fully static): `yarn build:static` produces a static export with a pre-rendered Orama search index; the bundled `.github/workflows/deploy-pages.yml` workflow publishes it on every push to `main`, with the base path and the site URL taken from the repository's Pages settings. Release notes are fetched by the browser directly from the GitHub API.
 
 ## Sponsor
 
