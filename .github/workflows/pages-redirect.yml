@@ -1,0 +1,77 @@
+# The live demo moved from GitHub Pages to Vercel on 2026-11-18. In this repository only, Pages now
+# serves a page that sends every old address to the same path on the new site: GitHub Pages has no
+# server-side redirects, so `index.html` and `404.html` (which Pages serves for any unknown path)
+# both carry a script redirect, with a meta refresh to the home page when scripts are off.
+#
+# A repository created from this template does not run this workflow (the `if:` below): it keeps
+# `deploy-pages.yml`, the static export to its own GitHub Pages site.
+#
+# The `uses:` refs are pinned to commit SHAs, like `deploy-pages.yml`.
+
+name: Redirect GitHub Pages to Vercel
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  actions: read # documented requirement of deploy-pages' artifact-ID path
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    if: github.repository == 'gfazioli/next-app-fumadocs-template'
+    runs-on: ubuntu-latest
+    env:
+      TARGET: https://next-app-fumadocs-template.vercel.app
+      BASE: /next-app-fumadocs-template
+    steps:
+      - name: Write the redirect page
+        run: |
+          mkdir -p out
+          cat > out/index.html <<HTML
+          <!doctype html>
+          <html lang="en">
+            <head>
+              <meta charset="utf-8" />
+              <meta name="robots" content="noindex" />
+              <title>Mantine Next.js + Fumadocs template: moved</title>
+              <link rel="canonical" href="${TARGET}/" />
+              <script>
+                (function () {
+                  var path = location.pathname;
+                  if (path.indexOf('${BASE}') === 0) path = path.slice('${BASE}'.length);
+                  location.replace('${TARGET}' + (path || '/') + location.search + location.hash);
+                })();
+              </script>
+              <meta http-equiv="refresh" content="0; url=${TARGET}/" />
+            </head>
+            <body>
+              <p>The demo moved to <a href="${TARGET}/">${TARGET#https://}</a>.</p>
+            </body>
+          </html>
+          HTML
+          cp out/index.html out/404.html
+          touch out/.nojekyll
+
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: out
+          include-hidden-files: true
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
