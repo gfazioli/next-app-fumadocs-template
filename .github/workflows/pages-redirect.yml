@@ -21,8 +21,10 @@ permissions:
   id-token: write
   actions: read # documented requirement of deploy-pages' artifact-ID path
 
+# Its own group: deploy-pages.yml starts on the same push, in the `pages` group, and with one
+# group shared the run that has nothing to publish could cancel the one that does.
 concurrency:
-  group: pages
+  group: pages-redirect
   cancel-in-progress: true
 
 jobs:

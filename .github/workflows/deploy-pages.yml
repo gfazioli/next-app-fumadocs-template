@@ -1,7 +1,8 @@
 # Static export → GitHub Pages artifact → Pages deploy.
 #
 # For a repository created from this template: the base path and the site URL come from the
-# repository's name, so it publishes as https://<owner>.github.io/<repo>/ with no edit. The
+# repository's Pages settings (actions/configure-pages), so it publishes unedited, whether at
+# https://<owner>.github.io/<repo>/, at a user site's root or on a custom domain. The
 # template's own repository skips it: its demo is on Vercel, and its Pages site only redirects
 # there (pages-redirect.yml).
 #
@@ -33,8 +34,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NEXT_PUBLIC_STATIC_EXPORT: '1'
-      NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
-      NEXT_PUBLIC_SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -50,8 +49,14 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
 
+      - id: pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+
       - name: Build static export
         run: yarn build:static
+        env:
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          NEXT_PUBLIC_SITE_URL: ${{ steps.pages.outputs.base_url }}/
 
       - name: Disable Jekyll
         run: touch out/.nojekyll
