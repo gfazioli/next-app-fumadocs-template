@@ -10,9 +10,13 @@ export default {
     },
     description:
       'A Next.js App Router starter with Mantine 9 and headless Fumadocs: a docs UI built 100% with Mantine, with full-text search, MDX and dark mode.',
-    // Where the site is published (GitHub Pages, see .github/workflows/deploy-pages.yml), base
-    // path included: the canonical and og:url of every page are resolved against it.
-    metadataBase: new URL('https://gfazioli.github.io/next-app-fumadocs-template/'),
+    // Where the site is published, base path included: the canonical, og:url and sitemap URLs
+    // are resolved against it. A static export for GitHub Pages sets NEXT_PUBLIC_SITE_URL
+    // (.github/workflows/deploy-pages.yml does: https://<user>.github.io/<repo>/); a server build
+    // defaults to the Vercel URL.
+    metadataBase: new URL(
+      process.env.NEXT_PUBLIC_SITE_URL ?? 'https://next-app-fumadocs-template.vercel.app/'
+    ),
     keywords: [
       'Mantine',
       'Fumadocs',

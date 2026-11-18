@@ -173,9 +173,10 @@ needed, and it would grant full access to your private repositories.
 
 ## Static export
 
-`yarn build:static` builds a fully static site (`output: 'export'`), the way this
-template's own demo is deployed on GitHub Pages. It sets `NEXT_PUBLIC_STATIC_EXPORT=1`,
-and `NEXT_PUBLIC_BASE_PATH` sets the base path (`/next-app-fumadocs-template` on Pages).
+`yarn build:static` builds a fully static site (`output: 'export'`), the way the bundled
+GitHub Pages workflow deploys it. It sets `NEXT_PUBLIC_STATIC_EXPORT=1`,
+`NEXT_PUBLIC_BASE_PATH` sets the base path (`/<repository>` on Pages) and
+`NEXT_PUBLIC_SITE_URL` the address the canonical and the sitemap use.
 Nothing has to be changed by hand: the routes and the components read the same variable.
 With no server to answer requests, each route is written out once at build time:
 

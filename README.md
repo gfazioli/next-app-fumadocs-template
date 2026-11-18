@@ -9,7 +9,7 @@ A [Next.js](https://nextjs.org/) App Router template for documentation sites, on
 
 **The engine is headless Fumadocs**: `fumadocs-core` and `fumadocs-mdx` handle the content, the page tree and the search index, and the docs UI on top of them is built **100% with Mantine**. No Tailwind, no third-party docs theme, a single styling system for the whole app: change `primaryColor` in `theme.ts` and the entire docs UI follows.
 
-**[Live demo](https://gfazioli.github.io/next-app-fumadocs-template/)** · [Documentation](https://gfazioli.github.io/next-app-fumadocs-template/docs) · [Release notes](https://github.com/gfazioli/next-app-fumadocs-template/releases) · [Mantine Extensions Hub](https://mantine-extensions.vercel.app/)
+**[Live demo](https://next-app-fumadocs-template.vercel.app/)** · [Documentation](https://next-app-fumadocs-template.vercel.app/docs) · [Release notes](https://github.com/gfazioli/next-app-fumadocs-template/releases) · [Mantine Extensions Hub](https://mantine-extensions.vercel.app/)
 
 <div align="center">
 
@@ -25,7 +25,7 @@ The same Mantine starter comes on three documentation engines: the same landing 
 | --- | --- | --- |
 | [Mantine Next.js + Docs](https://github.com/gfazioli/next-app-mantine-docs-template) | [`@next/mdx`](https://nextjs.org/docs/app/guides/mdx): no docs framework, every piece of the interface a Mantine component | [next-app-mantine-docs-template.vercel.app](https://next-app-mantine-docs-template.vercel.app/) |
 | [Mantine Next.js + Nextra](https://github.com/gfazioli/next-app-nextra-template) | [Nextra 4](https://nextra.site/) and its docs theme, with Mantine wired in | [next-app-nextra-template.vercel.app](https://next-app-nextra-template.vercel.app/) |
-| **Mantine Next.js + Fumadocs** (this one) | headless [`fumadocs-core`](https://www.fumadocs.dev/) under a docs UI built 100% with Mantine | [gfazioli.github.io/next-app-fumadocs-template](https://gfazioli.github.io/next-app-fumadocs-template/) |
+| **Mantine Next.js + Fumadocs** (this one) | headless [`fumadocs-core`](https://www.fumadocs.dev/) under a docs UI built 100% with Mantine | [next-app-fumadocs-template.vercel.app](https://next-app-fumadocs-template.vercel.app/) |
 
 Looking for components to put in your docs? The [Mantine Extensions Hub](https://mantine-extensions.vercel.app/) lists the same author's open-source extensions for Mantine.
 
@@ -99,8 +99,8 @@ The shipped documentation doubles as a feature tour: Getting Started, MDX Compon
 
 ## Deploy
 
-- **GitHub Pages** (fully static — this is how the live demo is hosted): `yarn build:static` produces a static export with a pre-rendered Orama search index; the bundled `.github/workflows/deploy-pages.yml` workflow publishes it on every push to `main`. Release notes are fetched by the browser directly from the GitHub API.
-- **Vercel / Node**: import the repo and deploy — the search API turns dynamic (the client stays lightweight) and the GitHub releases go through the bundled proxy with optional token.
+- **Vercel / Node** (this is how the live demo is hosted): import the repo and deploy — the search API turns dynamic (the client stays lightweight) and the GitHub releases go through the bundled proxy with optional token.
+- **GitHub Pages** (fully static): `yarn build:static` produces a static export with a pre-rendered Orama search index; the bundled `.github/workflows/deploy-pages.yml` workflow publishes it on every push to `main`, with the base path and the site URL taken from the repository's name. Release notes are fetched by the browser directly from the GitHub API.
 
 ## Sponsor
 

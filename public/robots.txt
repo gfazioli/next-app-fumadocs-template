@@ -1,4 +1,4 @@
-# https://gfazioli.github.io/next-app-fumadocs-template/robots.txt
+# https://next-app-fumadocs-template.vercel.app/robots.txt
 #
 # Search engines are welcome.
 User-agent: Googlebot
@@ -102,4 +102,4 @@ Disallow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://gfazioli.github.io/next-app-fumadocs-template/sitemap.xml
+Sitemap: https://next-app-fumadocs-template.vercel.app/sitemap.xml

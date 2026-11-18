@@ -1,5 +1,10 @@
 # Static export → GitHub Pages artifact → Pages deploy.
 #
+# For a repository created from this template: the base path and the site URL come from the
+# repository's name, so it publishes as https://<owner>.github.io/<repo>/ with no edit. The
+# template's own repository skips it: its demo is on Vercel, and its Pages site only redirects
+# there (pages-redirect.yml).
+#
 # The `uses:` refs are pinned to commit SHAs with a trailing version comment
 # rather than to floating major tags: a tag is mutable, so `@v7` would follow
 # wherever that tag is moved. `.github/dependabot.yml` keeps the pins current
@@ -24,10 +29,12 @@ concurrency:
 
 jobs:
   build:
+    if: github.repository != 'gfazioli/next-app-fumadocs-template'
     runs-on: ubuntu-latest
     env:
       NEXT_PUBLIC_STATIC_EXPORT: '1'
-      NEXT_PUBLIC_BASE_PATH: /next-app-fumadocs-template
+      NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
+      NEXT_PUBLIC_SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
