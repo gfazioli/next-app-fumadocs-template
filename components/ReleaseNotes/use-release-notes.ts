@@ -34,7 +34,13 @@ async function fetcher(url: string): Promise<GitHubRelease[]> {
   if (!response.ok) {
     throw new Error(`Failed to fetch releases (${response.status})`);
   }
-  return response.json();
+  const data = await response.json();
+  // The /api/github-releases proxy answers `{ releases, status }`; GitHub itself, the array.
+  const releases = Array.isArray(data) ? data : data?.releases;
+  if (!Array.isArray(releases)) {
+    throw new Error('Unexpected response from the releases endpoint');
+  }
+  return releases as GitHubRelease[];
 }
 
 export function useReleaseNotes() {
